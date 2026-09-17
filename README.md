@@ -661,6 +661,19 @@ sudo rabbitmqctl set_permissions -p / admin ".*" ".*" ".*"
 | Flux | - | - | - | [fluxcd.io](https://fluxcd.io) | GitOps |
 | Spinnaker | 9000 | 9001 | http://localhost:9000 | [spinnaker.io](https://spinnaker.io) | CD Platform |
 | Harness | 8080 | 8081 | http://localhost:8080 | [harness.io](https://harness.io) | CD Platform |
+| Jenkins Agent | 50000 | 50001 | - | [jenkins.io](https://jenkins.io) | Build Agent |
+| GitHub Actions Runner | - | - | - | [github.com/actions/runner](https://github.com/actions/runner) | Self-Hosted Runner |
+| GitLab Runner | - | - | - | [docs.gitlab.com/runner](https://docs.gitlab.com/runner) | CI Runner |
+| Woodpecker CI | 8000 | 8001 | http://localhost:8000 | [woodpecker-ci.org](https://woodpecker-ci.org) | CI/CD |
+| Gitea Actions | 3000 (via Gitea) | - | - | [gitea.com](https://gitea.com) | CI/CD |
+| Buildkite Agent | - | - | - | [buildkite.com](https://buildkite.com) | CI/CD |
+| Dagger | - | - | - | [dagger.io](https://dagger.io) | CI Engine |
+| nektos/act | - | - | - | [github.com/nektos/act](https://github.com/nektos/act) | Local GitHub Actions |
+| Argo Workflows | 2746 | 2747 | http://localhost:2746 | [argoproj.github.io](https://argoproj.github.io) | Workflow Engine |
+| Argo Rollouts | - | - | - | [argoproj.github.io](https://argoproj.github.io) | Progressive Delivery |
+| Argo Events | 12000 | 12001 | - | [argoproj.github.io](https://argoproj.github.io) | Event-Driven Automation |
+| Bamboo Agent | 54663 | 54664 | - | [atlassian.com/software/bamboo](https://atlassian.com/software/bamboo) | Build Agent |
+| Azure DevOps Server | 8080 | 443 | http://localhost:8080 | [azure.microsoft.com/devops](https://azure.microsoft.com/devops) | On-Prem DevOps |
 
 ## DevOps Tools
 
@@ -679,6 +692,23 @@ sudo rabbitmqctl set_permissions -p / admin ".*" ".*" ".*"
 | Serf | 7946 | 7947 | - | [serf.io](https://serf.io) | Service Discovery |
 | Etcd | 2379 | 2380 | http://localhost:2379 | [etcd.io](https://etcd.io) | Key-Value Store |
 | Zookeeper | 2181 | 2182 | - | [zookeeper.apache.org](https://zookeeper.apache.org) | Coordination Service |
+| ZooKeeper Follower | 2888 | 3888 (election) | - | [zookeeper.apache.org](https://zookeeper.apache.org) | ZK Quorum |
+| Consul DNS | 8600 | - | - | [consul.io](https://consul.io) | DNS Interface |
+| Consul Serf LAN | 8301 | 8300 (RPC), 8302 (WAN) | - | [consul.io](https://consul.io) | Gossip Protocol |
+| Nomad RPC | 4647 | 4648 (Serf) | - | [nomadproject.io](https://nomadproject.io) | Cluster RPC |
+| Etcd Peer | 2380 | - | - | [etcd.io](https://etcd.io) | etcd Cluster |
+| Ansible AWX | 80 | 443 | http://localhost | [ansible.com/awx](https://ansible.com/awx) | Ansible Web UI |
+| Semaphore UI | 3000 | 3001 | http://localhost:3000 | [semaphoreui.com](https://semaphoreui.com) | Ansible UI |
+| Rundeck | 4440 | 4441 | http://localhost:4440 | [rundeck.org](https://rundeck.org) | Runbook Automation |
+| Atlantis | 4141 | 4142 | http://localhost:4141 | [runatlantis.io](https://runatlantis.io) | Terraform Automation |
+| Pulumi | - | - | - | [pulumi.com](https://pulumi.com) | Infrastructure as Code |
+| Tilt | 10350 | 10351 | http://localhost:10350 | [tilt.dev](https://tilt.dev) | Kubernetes Development |
+| DevSpace | - | - | - | [devspace.sh](https://devspace.sh) | Kubernetes Development |
+| Telepresence | - | - | - | [telepresence.io](https://telepresence.io) | Kubernetes Development |
+| ngrok | 4040 (API) | - | http://localhost:4040 | [ngrok.com](https://ngrok.com) | Tunneling |
+| Cloudflare Tunnel | - | - | - | [developers.cloudflare.com](https://developers.cloudflare.com/cloudflare-one) | Tunneling |
+| Velero | - | - | - | [velero.io](https://velero.io) | Kubernetes Backup |
+| Restic | - | - | - | [restic.net](https://restic.net) | Backup |
 
 ## Identity & Access Management
 
