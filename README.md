@@ -45,6 +45,50 @@
 | Fiber (Go) | 3000 | 3001, 8080 | `go run main.go` | [gofiber.io](https://gofiber.io) | Go Framework |
 | Actix (Rust) | 8080 | 8081, 3000 | `cargo run` | [actix.rs](https://actix.rs) | Rust Framework |
 | Rocket (Rust) | 8000 | 8001, 3000 | `cargo run` | [rocket.rs](https://rocket.rs) | Rust Framework |
+| Vite | 5173 | 4173 (preview), 3000 | `npm run dev` | [vitejs.dev](https://vitejs.dev) | Frontend Build Tool |
+| Nuxt | 3000 | 3001, 8080 | `npm run dev` | [nuxt.com](https://nuxt.com) | Vue Meta-Framework |
+| SvelteKit | 5173 | 4173 (preview) | `npm run dev` | [kit.svelte.dev](https://kit.svelte.dev) | Svelte Meta-Framework |
+| Astro | 4321 | 4322, 3000 | `npm run dev` | [astro.build](https://astro.build) | Content-Driven Framework |
+| Remix | 3000 | 3001, 5173 | `npm run dev` | [remix.run](https://remix.run) | React Framework |
+| Gatsby | 8000 | 8001, 3000 | `gatsby develop` | [gatsbyjs.com](https://gatsbyjs.com) | React Static Site Generator |
+| NestJS | 3000 | 3001, 8080 | `npm run start:dev` | [nestjs.com](https://nestjs.com) | Node.js Framework |
+| Koa | 3000 | 3001 | `node app.js` | [koajs.com](https://koajs.com) | Node.js Framework |
+| Hapi | 3000 | 3001 | `node server.js` | [hapi.dev](https://hapi.dev) | Node.js Framework |
+| Deno | 8000 | 3000, 8080 | `deno run --allow-net main.ts` | [deno.com](https://deno.com) | JS/TS Runtime |
+| Bun | 3000 | 3001 | `bun run index.ts` | [bun.sh](https://bun.sh) | JS Runtime & Toolkit |
+| Ember | 4200 | 4201 | `ember serve` | [emberjs.com](https://emberjs.com) | Frontend Framework |
+| Phoenix (Elixir) | 4000 | 4001 | `mix phx.server` | [phoenixframework.org](https://phoenixframework.org) | Elixir Framework |
+| Play Framework | 9000 | 9001 | `sbt run` | [playframework.com](https://playframework.com) | JVM Framework |
+| Quarkus | 8080 | 8081 | `./mvnw quarkus:dev` | [quarkus.io](https://quarkus.io) | Java Framework |
+| Micronaut | 8080 | 8081 | `./gradlew run` | [micronaut.io](https://micronaut.io) | JVM Framework |
+| Ktor | 8080 | 8081 | `./gradlew run` | [ktor.io](https://ktor.io) | Kotlin Framework |
+| Vert.x | 8080 | 8081 | `mvn vertx:run` | [vertx.io](https://vertx.io) | JVM Toolkit |
+| Meteor | 3000 | 3001 | `meteor` | [meteor.com](https://meteor.com) | Full-Stack JS |
+| Storybook | 6006 | 6007 | `npm run storybook` | [storybook.js.org](https://storybook.js.org) | UI Component Workshop |
+| Webpack Dev Server | 8080 | 3000 | `webpack serve` | [webpack.js.org](https://webpack.js.org) | Bundler Dev Server |
+| Parcel | 1234 | 1235 | `parcel index.html` | [parceljs.org](https://parceljs.org) | Zero-Config Bundler |
+| Browsersync | 3000 | 3001 | `browser-sync start --server` | [browsersync.io](https://browsersync.io) | Live Reload |
+| JSON Server | 3000 | 3001 | `json-server db.json` | [github.com/typicode/json-server](https://github.com/typicode/json-server) | Mock REST API |
+| http-server | 8080 | 8081 | `http-server` | [github.com/http-party/http-server](https://github.com/http-party/http-server) | Static File Server |
+| Prisma Studio | 5555 | 5556 | `npx prisma studio` | [prisma.io](https://prisma.io) | Database GUI |
+| Hasura | 8080 | 8081 | `hasura console` | [hasura.io](https://hasura.io) | GraphQL Engine |
+| PostgREST | 3000 | 3001 | `postgrest postgrest.conf` | [postgrest.org](https://postgrest.org) | REST API for PostgreSQL |
+| Supabase | 8000 | 54321 (local stack) | `supabase start` | [supabase.com](https://supabase.com) | Backend-as-a-Service |
+| Appwrite | 80 | 8080 | `docker compose up -d` | [appwrite.io](https://appwrite.io) | Backend-as-a-Service |
+| PocketBase | 8090 | 8091 | `./pocketbase serve` | [pocketbase.io](https://pocketbase.io) | Backend-as-a-Service |
+| Parse Server | 1337 | 1338 | `npm start` | [parseplatform.org](https://parseplatform.org) | Backend-as-a-Service |
+| WordPress | 80 | 8080 | `wp server` | [wordpress.org](https://wordpress.org) | CMS |
+| Strapi | 1337 | 1338 | `npm run develop` | [strapi.io](https://strapi.io) | Headless CMS |
+| Ghost | 2368 | 2369 | `ghost start` | [ghost.org](https://ghost.org) | CMS / Blog |
+| Directus | 8055 | 8056 | `npx directus start` | [directus.io](https://directus.io) | Headless CMS |
+| Payload | 3000 | 3001 | `npm run dev` | [payloadcms.com](https://payloadcms.com) | Headless CMS |
+| Docusaurus | 3000 | 3001 | `npm run start` | [docusaurus.io](https://docusaurus.io) | Documentation Site |
+| MkDocs | 8000 | 8001 | `mkdocs serve` | [mkdocs.org](https://mkdocs.org) | Documentation Site |
+| VitePress | 5173 | 4173 (preview) | `vitepress dev` | [vitepress.dev](https://vitepress.dev) | Documentation Site |
+| Hugo | 1313 | 1314 | `hugo server` | [gohugo.io](https://gohugo.io) | Static Site Generator |
+| Jekyll | 4000 | 4001 | `bundle exec jekyll serve` | [jekyllrb.com](https://jekyllrb.com) | Static Site Generator |
+| Medusa | 9000 | 9001 | `npm run dev` | [medusajs.com](https://medusajs.com) | E-commerce Platform |
+| Saleor | 8000 | 8001 | `python manage.py runserver` | [saleor.io](https://saleor.io) | E-commerce Platform |
 
 ## Databases
 
