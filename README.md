@@ -12,6 +12,7 @@
 - [Vector Databases](#vector-databases)
 - [AI / ML & LLM Serving](#ai--ml--llm-serving)
 - [Web Servers](#web-servers)
+- [API Gateways & Service Mesh](#api-gateways--service-mesh)
 - [Docker & Kubernetes](#docker--kubernetes)
 - [Monitoring](#monitoring)
 - [Message Queues](#message-queues)
@@ -251,6 +252,49 @@
 | Envoy | 80 | 443 | 8080 | [envoyproxy.io](https://envoyproxy.io) | Cross-platform |
 | HAProxy | 80 | 443 | 8080 | [haproxy.org](https://haproxy.org) | Load Balancer |
 | Varnish | 80 | 443 | 8080 | [varnish-cache.org](https://varnish-cache.org) | Cache |
+| OpenResty | 80 | 443 | 8080 | [openresty.org](https://openresty.org) | Nginx + Lua |
+| Nginx Proxy Manager | 80 | 443 | 81 (admin UI) | [nginxproxymanager.com](https://nginxproxymanager.com) | Reverse Proxy UI |
+| Caddy Admin API | 2019 | - | - | [caddyserver.com](https://caddyserver.com) | Caddy Config API |
+| NGINX Unit | 80 | 443 | 8080 | [unit.nginx.org](https://unit.nginx.org) | Polyglot App Server |
+| OpenLiteSpeed | 80 | 443 | 8088 (admin) | [openlitespeed.org](https://openlitespeed.org) | Web Server |
+| LiteSpeed | 80 | 443 | 7080 (admin) | [litespeedtech.com](https://litespeedtech.com) | Web Server |
+| Kestrel (ASP.NET) | 5000 | 5001 (HTTPS) | - | [learn.microsoft.com](https://learn.microsoft.com/aspnet/core/fundamentals/servers/kestrel) | .NET Web Server |
+| Gunicorn | 8000 | 8001 | - | [gunicorn.org](https://gunicorn.org) | Python WSGI Server |
+| uWSGI | 8000 | 8001 | 1717 (stats) | [uwsgi-docs.readthedocs.io](https://uwsgi-docs.readthedocs.io) | Python App Server |
+| Hypercorn | 8000 | 8001 | - | [hypercorn.readthedocs.io](https://hypercorn.readthedocs.io) | Python ASGI Server |
+| Daphne | 8000 | 8001 | - | [github.com/django/daphne](https://github.com/django/daphne) | Django ASGI Server |
+| Puma | 9292 | 3000 | - | [puma.io](https://puma.io) | Ruby App Server |
+| Unicorn | 8080 | 8081 | - | [unicorn.bogomips.org](https://unicorn.bogomips.org) | Ruby App Server |
+| WildFly | 8080 | 9990 (mgmt) | - | [wildfly.org](https://wildfly.org) | Java App Server |
+| Oracle WebLogic | 7001 | 7002 (SSL) | - | [oracle.com/weblogic](https://oracle.com/weblogic) | Java App Server |
+| IBM WebSphere | 9080 | 9443 (SSL) | 9043 (admin) | [ibm.com/websphere](https://ibm.com/websphere) | Java App Server |
+| GlassFish | 8080 | 8181 (SSL) | 4848 (admin) | [glassfish.org](https://glassfish.org) | Java App Server |
+| Payara | 8080 | 8181 (SSL) | 4848 (admin) | [payara.fish](https://payara.fish) | Java App Server |
+| Open Liberty | 9080 | 9443 (SSL) | - | [openliberty.io](https://openliberty.io) | Java App Server |
+
+## API Gateways & Service Mesh
+
+| Tool | Default Port | Alternative Ports | Web UI | Website | Purpose |
+|------|-------------|------------------|--------|---------|--------|
+| Kong | 8000 | 8443 (TLS), 8001 (admin), 8002 (manager) | http://localhost:8001 | [konghq.com](https://konghq.com) | API Gateway |
+| Konga | 1337 | 1338 | http://localhost:1337 | [github.com/pantsel/konga](https://github.com/pantsel/konga) | Kong UI |
+| Apache APISIX | 9080 | 9443 (TLS), 9180 (admin), 9000 (dashboard) | http://localhost:9000 | [apisix.apache.org](https://apisix.apache.org) | API Gateway |
+| KrakenD | 8080 | 8081 | - | [krakend.io](https://krakend.io) | API Gateway |
+| Tyk Gateway | 8080 | 8081 | http://localhost:3000 (dashboard) | [tyk.io](https://tyk.io) | API Gateway |
+| Emissary-Ingress | 8080 | 8443, 8877 (admin) | - | [emissary-ingress.dev](https://emissary-ingress.dev) | Kubernetes Gateway |
+| Gloo Edge | 8080 | 8443 | - | [solo.io/gloo-edge](https://solo.io/gloo-edge) | API Gateway |
+| Traefik Dashboard | 8080 | 9000 (legacy) | http://localhost:8080 | [traefik.io](https://traefik.io) | Gateway Dashboard |
+| Envoy Admin | 9901 | 15000 (Istio) | http://localhost:9901 | [envoyproxy.io](https://envoyproxy.io) | Proxy Admin |
+| Istio Ingress Gateway | 80 | 443 | - | [istio.io](https://istio.io) | Service Mesh Gateway |
+| Istio Envoy Sidecar | 15001 | 15006, 15008, 15021 (health), 15090 (metrics) | http://localhost:15000 | [istio.io](https://istio.io) | Sidecar Proxy |
+| Istiod (Control Plane) | 15010 | 15012, 15014 (metrics), 15017 | - | [istio.io](https://istio.io) | Istio Control Plane |
+| Kiali | 20001 | 20002 | http://localhost:20001 | [kiali.io](https://kiali.io) | Istio UI |
+| Linkerd Proxy | 4143 | 4190 (tap), 4191 (admin) | - | [linkerd.io](https://linkerd.io) | Service Mesh Proxy |
+| Linkerd Viz | 8084 | 50750 | http://localhost:8084 | [linkerd.io](https://linkerd.io) | Linkerd Dashboard |
+| Open Service Mesh | 4443 | 15128 | - | [openservicemesh.io](https://openservicemesh.io) | Service Mesh |
+| Consul Connect | 8500 | 8502 (gRPC) | http://localhost:8500 | [consul.io](https://consul.io) | Service Mesh |
+| Kuma | 5681 | 5682 (data plane) | http://localhost:5681 | [kuma.io](https://kuma.io) | Service Mesh |
+| Ambassador Edge Stack | 8080 | 8443, 8877 (admin) | - | [getambassador.io](https://getambassador.io) | API Gateway |
 
 ## Docker & Kubernetes
 
