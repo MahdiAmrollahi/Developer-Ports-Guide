@@ -936,6 +936,19 @@ sudo rabbitmqctl set_permissions -p / admin ".*" ".*" ".*"
 | 3306 | MySQL | Database |
 | 27017 | MongoDB | Database |
 | 6379 | Redis | Cache |
+| 5173 | Vite default | Vite, SvelteKit, VitePress |
+| 5555 | Flower, Prisma Studio | Celery, Prisma |
+| 6006 | TensorBoard, Storybook | ML & UI tooling |
+| 7860 | Gradio, Stable Diffusion WebUI | ML demos |
+| 8501 | Streamlit | Data apps |
+| 8888 | Jupyter, Hue, Druid | Notebooks & analytics |
+| 9000 | SonarQube, Portainer, MinIO, Sentry | DevOps tools |
+| 9090 | Prometheus | Monitoring |
+| 9200 | Elasticsearch / OpenSearch | Search |
+| 11434 | Ollama | Local LLMs |
+| 1234 | LM Studio, Parcel | Local LLMs & bundlers |
+| 15672 | RabbitMQ Management | Messaging |
+| 8545 | Ethereum JSON-RPC | Web3 development |
 
 ## Real-time Tools
 
@@ -947,6 +960,14 @@ sudo rabbitmqctl set_permissions -p / admin ".*" ".*" ".*"
 | SignalR | 5000 | 5001 | WebSocket | ASP.NET Real-time |
 | Firebase | - | - | WebSocket | Google Real-time |
 | Deepstream | 6020 | 6021 | WebSocket | Real-time Server |
+| Centrifugo | 8000 | 8001 | WebSocket/HTTP | Realtime Messaging Server |
+| Mercure | 80 | 443, 3000 | SSE/WebSocket | Real-time Updates |
+| Soketi | 6001 | 6002 | WebSocket | Pusher-Compatible Server |
+| Meteor DDP | 3000 | 3001 | WebSocket | Meteor Realtime |
+| Phoenix Channels | 4000 | 4001 | WebSocket | Elixir Realtime |
+| GraphQL Subscriptions | 4000 | 8080 | WebSocket | GraphQL Realtime |
+| Server-Sent Events (SSE) | 80 | 443 | HTTP | Server Push |
+| y-websocket (Yjs) | 1234 | 1235 | WebSocket | CRDT Collaboration |
 
 ## Object Storage & File Services
 
