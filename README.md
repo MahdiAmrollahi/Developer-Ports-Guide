@@ -137,6 +137,45 @@
 | ArangoDB | 8529 | 8530 | `http://localhost:8529` | [arangodb.com](https://arangodb.com) | Multi-Model |
 | OrientDB | 2480 | 2481 | `http://localhost:2480` | [orientdb.org](https://orientdb.org) | Graph |
 | RethinkDB | 28015 | 28016 | `rethinkdb://localhost:28015` | [rethinkdb.com](https://rethinkdb.com) | NoSQL |
+| Microsoft SQL Server | 1433 | 1434 (browser) | `mssql://localhost:1433` | [microsoft.com/sql-server](https://www.microsoft.com/sql-server) | SQL |
+| Oracle Database | 1521 | 1522 | `oracle://localhost:1521` | [oracle.com/database](https://oracle.com/database) | SQL |
+| IBM Db2 | 50000 | 50001 | `db2://localhost:50000` | [ibm.com/db2](https://ibm.com/db2) | SQL |
+| Firebird | 3050 | 3051 | `firebird://localhost:3050` | [firebirdsql.org](https://firebirdsql.org) | SQL |
+| CockroachDB | 26257 | 8080 (console) | `postgresql://localhost:26257` | [cockroachlabs.com](https://cockroachlabs.com) | Distributed SQL |
+| TiDB | 4000 | 10080 (status), 2379 (PD) | `mysql://localhost:4000` | [pingcap.com](https://pingcap.com) | Distributed SQL |
+| YugabyteDB | 5433 | 7000 (master), 9042 (YCQL) | `postgresql://localhost:5433` | [yugabyte.com](https://yugabyte.com) | Distributed SQL |
+| ScyllaDB | 9042 | 9142 (SSL), 9180 (metrics) | `cassandra://localhost:9042` | [scylladb.com](https://scylladb.com) | NoSQL |
+| Couchbase | 8091 | 8093 (query), 11210 (data) | `couchbase://localhost:11210` | [couchbase.com](https://couchbase.com) | NoSQL |
+| Memcached | 11211 | 11212 | `memcached://localhost:11211` | [memcached.org](https://memcached.org) | Cache |
+| DragonflyDB | 6379 | 6380 | `redis://localhost:6379` | [dragonflydb.io](https://dragonflydb.io) | Redis-Compatible Cache |
+| KeyDB | 6379 | 6380 | `redis://localhost:6379` | [keydb.dev](https://keydb.dev) | Redis-Compatible Cache |
+| Valkey | 6379 | 6380 | `redis://localhost:6379` | [valkey.io](https://valkey.io) | Redis-Compatible Cache |
+| PgBouncer | 6432 | 6433 | `postgresql://localhost:6432` | [pgbouncer.org](https://pgbouncer.org) | PostgreSQL Pooler |
+| ProxySQL | 6033 | 6032 (admin) | `mysql://localhost:6033` | [proxysql.com](https://proxysql.com) | MySQL Proxy |
+| Vitess | 3306 | 15306 (vtgate), 15999 (vtctld) | `mysql://localhost:15306` | [vitess.io](https://vitess.io) | MySQL Scaling |
+| FerretDB | 27017 | 27018 | `mongodb://localhost:27017` | [ferretdb.com](https://ferretdb.com) | MongoDB-Compatible (PostgreSQL) |
+| QuestDB | 8812 | 9000 (web), 9009 (ILP) | `postgresql://localhost:8812` | [questdb.io](https://questdb.io) | Time Series |
+| OpenTSDB | 4242 | 4243 | `http://localhost:4242` | [opentsdb.net](https://opentsdb.net) | Time Series |
+| DuckDB | - | - | `duckdb://database.duckdb` | [duckdb.org](https://duckdb.org) | Embedded OLAP |
+| H2 Database | 8082 (console) | 9092 (server) | `jdbc:h2:tcp://localhost:9092/~/test` | [h2database.com](https://h2database.com) | Embedded SQL |
+| Redis Sentinel | 26379 | 26380 | `redis-sentinel://localhost:26379` | [redis.io](https://redis.io) | High Availability |
+| Redis Cluster Bus | 16379 | 16380 | internal | [redis.io](https://redis.io) | Cluster Communication |
+| MongoDB Shard | 27018 | 27019 (config) | `mongodb://localhost:27018` | [mongodb.com](https://mongodb.com) | Sharded Cluster |
+
+### Database Admin & GUI Tools
+
+| Tool | Default Port | Alternative Port | Web UI | Website | Purpose |
+|------|-------------|-----------------|--------|---------|--------|
+| pgAdmin | 5050 | 80 (legacy) | http://localhost:5050 | [pgadmin.org](https://pgadmin.org) | PostgreSQL Admin |
+| Adminer | 8080 | 8081 | http://localhost:8080 | [adminer.org](https://adminer.org) | Multi-DB Admin |
+| phpMyAdmin | 80 | 8080 | http://localhost | [phpmyadmin.net](https://phpmyadmin.net) | MySQL Admin |
+| Mongo Express | 8081 | 8082 | http://localhost:8081 | [github.com/mongo-express](https://github.com/mongo-express/mongo-express) | MongoDB Admin |
+| RedisInsight | 5540 | 8001 (legacy) | http://localhost:5540 | [redis.io/insight](https://redis.io/insight) | Redis GUI |
+| CloudBeaver | 8978 | 8979 | http://localhost:8978 | [dbeaver.com/cloudbeaver](https://dbeaver.com/cloudbeaver) | Web DB Client |
+| SQLPad | 3000 | 3001 | http://localhost:3000 | [sqlpad.io](https://sqlpad.io) | SQL Editor |
+| NocoDB | 8080 | 8081 | http://localhost:8080 | [nocodb.com](https://nocodb.com) | No-Code DB UI |
+| Baserow | 80 | 3000 | http://localhost | [baserow.io](https://baserow.io) | No-Code Database |
+| Chat2DB | 10824 | 10825 | http://localhost:10824 | [chat2db.ai](https://chat2db.ai) | AI SQL Client |
 
 ## Web Servers
 
