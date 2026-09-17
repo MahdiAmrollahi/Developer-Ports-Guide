@@ -9,6 +9,8 @@
 - [Development Tools](#development-tools)
 - [Debugging & Dev Server Ports](#debugging--dev-server-ports)
 - [Databases](#databases)
+- [Vector Databases](#vector-databases)
+- [AI / ML & LLM Serving](#ai--ml--llm-serving)
 - [Web Servers](#web-servers)
 - [Docker & Kubernetes](#docker--kubernetes)
 - [Monitoring](#monitoring)
@@ -176,6 +178,61 @@
 | NocoDB | 8080 | 8081 | http://localhost:8080 | [nocodb.com](https://nocodb.com) | No-Code DB UI |
 | Baserow | 80 | 3000 | http://localhost | [baserow.io](https://baserow.io) | No-Code Database |
 | Chat2DB | 10824 | 10825 | http://localhost:10824 | [chat2db.ai](https://chat2db.ai) | AI SQL Client |
+
+## Vector Databases
+
+| Tool | Default Port | Alternative Port | Endpoint / UI | Website | Purpose |
+|------|-------------|-----------------|---------------|---------|--------|
+| Qdrant | 6333 | 6334 (gRPC) | http://localhost:6333/dashboard | [qdrant.tech](https://qdrant.tech) | Vector Search Engine |
+| Milvus | 19530 | 9091 (metrics) | http://localhost:9091 | [milvus.io](https://milvus.io) | Vector Database |
+| Weaviate | 8080 | 50051 (gRPC) | http://localhost:8080 | [weaviate.io](https://weaviate.io) | Vector Database |
+| Chroma | 8000 | 8001 | http://localhost:8000 | [trychroma.com](https://trychroma.com) | Vector Database |
+| pgvector | 5432 | - | PostgreSQL extension | [github.com/pgvector/pgvector](https://github.com/pgvector/pgvector) | Vectors in PostgreSQL |
+| Vespa | 8080 | 19071 (config) | http://localhost:8080 | [vespa.ai](https://vespa.ai) | Search & Vector DB |
+| Marqo | 8882 | 8883 | http://localhost:8882 | [marqo.ai](https://marqo.ai) | Vector Search Engine |
+| Vald | 8080 | 8081 | - | [vald.vdaas.org](https://vald.vdaas.org) | Distributed Vector Search |
+| Redis Stack (RediSearch) | 6379 | 6380 | `redis://localhost:6379` | [redis.io](https://redis.io) | Vectors in Redis |
+| LanceDB | - | - | embedded | [lancedb.com](https://lancedb.com) | Embedded Vector DB |
+| FAISS | - | - | library | [github.com/facebookresearch/faiss](https://github.com/facebookresearch/faiss) | Similarity Search Library |
+| Pinecone | - | - | cloud | [pinecone.io](https://pinecone.io) | Managed Vector DB |
+| Zilliz Cloud | - | - | cloud | [zilliz.com](https://zilliz.com) | Managed Milvus |
+
+## AI / ML & LLM Serving
+
+| Tool | Default Port | Alternative Port | Endpoint / UI | Website | Purpose |
+|------|-------------|-----------------|---------------|---------|--------|
+| Ollama | 11434 | 11435 | http://localhost:11434 | [ollama.com](https://ollama.com) | Local LLM Runtime |
+| vLLM | 8000 | 8001 | http://localhost:8000/docs | [docs.vllm.ai](https://docs.vllm.ai) | LLM Inference Server |
+| LM Studio | 1234 | 1235 | http://localhost:1234 | [lmstudio.ai](https://lmstudio.ai) | Local LLM Server |
+| llama.cpp Server | 8080 | 8081 | http://localhost:8080 | [github.com/ggerganov/llama.cpp](https://github.com/ggerganov/llama.cpp) | LLM Inference |
+| LocalAI | 8080 | 8081 | http://localhost:8080 | [localai.io](https://localai.io) | OpenAI-Compatible API |
+| Hugging Face TGI | 80 | 8080 (Docker) | http://localhost | [huggingface.co/docs/text-generation-inference](https://huggingface.co/docs/text-generation-inference) | LLM Inference |
+| Xinference | 9997 | 9998 | http://localhost:9997 | [inference.readthedocs.io](https://inference.readthedocs.io) | Model Serving |
+| Text Generation WebUI | 7860 | 5000 (API) | http://localhost:7860 | [github.com/oobabooga/text-generation-webui](https://github.com/oobabooga/text-generation-webui) | LLM Playground |
+| Open WebUI | 8080 | 3000 | http://localhost:8080 | [openwebui.com](https://openwebui.com) | LLM Web Interface |
+| LibreChat | 3080 | 3081 | http://localhost:3080 | [librechat.ai](https://librechat.ai) | Multi-LLM Chat |
+| AnythingLLM | 3001 | 3002 | http://localhost:3001 | [anythingllm.com](https://anythingllm.com) | RAG & Chat UI |
+| Dify | 80 | 5001 (API) | http://localhost | [dify.ai](https://dify.ai) | LLM App Platform |
+| Flowise | 3000 | 3001 | http://localhost:3000 | [flowiseai.com](https://flowiseai.com) | LLM Flow Builder |
+| Langflow | 7860 | 7861 | http://localhost:7860 | [langflow.org](https://langflow.org) | Visual LLM Builder |
+| n8n | 5678 | 5679 | http://localhost:5678 | [n8n.io](https://n8n.io) | Workflow Automation |
+| ComfyUI | 8188 | 8189 | http://localhost:8188 | [comfy.org](https://comfy.org) | Diffusion UI |
+| AUTOMATIC1111 (SD WebUI) | 7860 | 7861 | http://localhost:7860 | [github.com/AUTOMATIC1111/stable-diffusion-webui](https://github.com/AUTOMATIC1111/stable-diffusion-webui) | Image Generation |
+| InvokeAI | 9090 | 9091 | http://localhost:9090 | [invoke.ai](https://invoke.ai) | Image Generation |
+| Jupyter Notebook / Lab | 8888 | 8889 | http://localhost:8888 | [jupyter.org](https://jupyter.org) | Notebooks |
+| JupyterHub | 8000 | 8001 | http://localhost:8000 | [jupyter.org/hub](https://jupyter.org/hub) | Multi-User Notebooks |
+| RStudio Server | 8787 | 8788 | http://localhost:8787 | [posit.co](https://posit.co) | R IDE |
+| MLflow | 5000 | 5001 | http://localhost:5000 | [mlflow.org](https://mlflow.org) | ML Lifecycle |
+| TensorBoard | 6006 | 6007 | http://localhost:6006 | [tensorflow.org/tensorboard](https://tensorflow.org/tensorboard) | Training Visualization |
+| Ray Dashboard | 8265 | 6379 (GCS), 10001 (client) | http://localhost:8265 | [ray.io](https://ray.io) | Distributed ML |
+| TorchServe | 8080 | 8081 (mgmt), 8082 (metrics) | http://localhost:8080 | [pytorch.org/serve](https://pytorch.org/serve) | PyTorch Serving |
+| TensorFlow Serving | 8501 | 8500 (gRPC) | http://localhost:8501 | [tensorflow.org/serving](https://tensorflow.org/serving) | TF Model Serving |
+| Triton Inference Server | 8000 | 8001 (gRPC), 8002 (metrics) | http://localhost:8000 | [developer.nvidia.com/triton-inference-server](https://developer.nvidia.com/triton-inference-server) | Multi-Framework Serving |
+| Gradio | 7860 | 7861 | http://localhost:7860 | [gradio.app](https://gradio.app) | ML Demo UI |
+| Streamlit | 8501 | 8502 | http://localhost:8501 | [streamlit.io](https://streamlit.io) | Data App Framework |
+| Dash | 8050 | 8051 | http://localhost:8050 | [dash.plotly.com](https://dash.plotly.com) | Data App Framework |
+| Panel | 5006 | 5007 | http://localhost:5006 | [panel.holoviz.org](https://panel.holoviz.org) | Data App Framework |
+| Weights & Biases (local) | 8080 | 8081 | http://localhost:8080 | [wandb.ai](https://wandb.ai) | Experiment Tracking |
 
 ## Web Servers
 
