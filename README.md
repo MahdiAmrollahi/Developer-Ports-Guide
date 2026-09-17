@@ -35,6 +35,7 @@
 - [Analytics, BI & Feature Flags](#analytics-bi--feature-flags)
 - [Error Tracking & APM](#error-tracking--apm)
 - [Local Cloud Emulators](#local-cloud-emulators)
+- [Blockchain & Web3](#blockchain--web3)
 - [Useful Commands](#useful-commands)
 
 ## Development Tools
@@ -1094,6 +1095,30 @@ sudo rabbitmqctl set_permissions -p / admin ".*" ".*" ".*"
 | Spanner Emulator | 9010 (gRPC) | 9020 (REST) | - | [cloud.google.com/spanner/docs/emulator](https://cloud.google.com/spanner/docs/emulator) | GCP Spanner |
 | BigQuery Emulator | 9050 | 9051 | - | [github.com/goccy/bigquery-emulator](https://github.com/goccy/bigquery-emulator) | BigQuery Emulator |
 | Fake GCS Server | 4443 | 4444 | - | [github.com/fsouza/fake-gcs-server](https://github.com/fsouza/fake-gcs-server) | GCS Emulator |
+
+## Blockchain & Web3
+
+| Tool | Default Port | Alternative Ports | Protocol / UI | Website | Purpose |
+|------|-------------|------------------|---------------|---------|--------|
+| Geth (Ethereum) | 8545 | 8546 (WS), 8551 (auth RPC), 30303 (P2P) | JSON-RPC | [geth.ethereum.org](https://geth.ethereum.org) | Ethereum Node |
+| Erigon | 8545 | 8546 (WS), 9090 (metrics), 30303 (P2P) | JSON-RPC | [erigontech.github.io](https://erigontech.github.io) | Ethereum Node |
+| Nethermind | 8545 | 8546 (WS), 30303 (P2P) | JSON-RPC | [nethermind.io](https://nethermind.io) | Ethereum Node |
+| Besu | 8545 | 8546 (WS), 9545 (metrics), 30303 (P2P) | JSON-RPC | [besu.hyperledger.org](https://besu.hyperledger.org) | Ethereum Node |
+| Hardhat Node | 8545 | 8546 | JSON-RPC | [hardhat.org](https://hardhat.org) | Dev Blockchain |
+| Anvil (Foundry) | 8545 | 8546 | JSON-RPC | [getfoundry.sh](https://getfoundry.sh) | Dev Blockchain |
+| Ganache | 8545 | 7545 (legacy) | JSON-RPC | [trufflesuite.com/ganache](https://trufflesuite.com/ganache) | Dev Blockchain |
+| Bitcoin Core | 8332 (RPC) | 8333 (P2P), 18332/18333 (testnet) | JSON-RPC | [bitcoincore.org](https://bitcoincore.org) | Bitcoin Node |
+| Litecoin Core | 9332 | 9333 (P2P) | JSON-RPC | [litecoin.org](https://litecoin.org) | Litecoin Node |
+| Monero | 18081 (RPC) | 18080 (P2P), 18082/18083 (ZMQ) | JSON-RPC | [getmonero.org](https://getmonero.org) | Monero Node |
+| Zcash | 8232 | 8233 (P2P) | JSON-RPC | [z.cash](https://z.cash) | Zcash Node |
+| Solana | 8899 (RPC) | 8900 (WS), 8001-8020 (P2P) | JSON-RPC | [solana.com](https://solana.com) | Solana Node |
+| Avalanche | 9650 | 9651 (P2P), 9652 (WS) | JSON-RPC | [avax.network](https://avax.network) | Avalanche Node |
+| Polkadot | 9944 | 9933 (legacy), 30333 (P2P), 9615 (metrics) | JSON-RPC | [polkadot.network](https://polkadot.network) | Polkadot Node |
+| Cosmos / Tendermint | 26657 (RPC) | 26656 (P2P), 1317 (REST), 9090 (gRPC) | JSON-RPC | [cosmos.network](https://cosmos.network) | Cosmos Node |
+| NEAR | 3030 | 24567 (P2P), 8080 (RPC) | JSON-RPC | [near.org](https://near.org) | NEAR Node |
+| IPFS | 5001 (API) | 4001 (swarm), 8080 (gateway), 8081 (web UI) | HTTP | [ipfs.tech](https://ipfs.tech) | Distributed Files |
+| Filecoin Lotus | 1234 | 3453 (metrics) | JSON-RPC | [filecoin.io](https://filecoin.io) | Filecoin Node |
+| Blockscout | 4000 | 4001 | http://localhost:4000 | [blockscout.com](https://blockscout.com) | EVM Explorer |
 
 ## Best Practices
 
