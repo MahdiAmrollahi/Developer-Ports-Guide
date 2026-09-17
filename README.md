@@ -23,6 +23,7 @@
 - [Security Tools](#security-tools)
 - [CI/CD](#cicd)
 - [DevOps Tools](#devops-tools)
+- [Identity & Access Management](#identity--access-management)
 - [Data Processing & Workflow Tools](#data-processing--workflow-tools)
 - [Apache Tools](#apache-tools)
 - [Log Management](#log-management)
@@ -639,6 +640,40 @@ sudo rabbitmqctl set_permissions -p / admin ".*" ".*" ".*"
 | Serf | 7946 | 7947 | - | [serf.io](https://serf.io) | Service Discovery |
 | Etcd | 2379 | 2380 | http://localhost:2379 | [etcd.io](https://etcd.io) | Key-Value Store |
 | Zookeeper | 2181 | 2182 | - | [zookeeper.apache.org](https://zookeeper.apache.org) | Coordination Service |
+
+## Identity & Access Management
+
+| Tool | Default Port | Alternative Ports | Web UI | Website | Purpose |
+|------|-------------|------------------|--------|---------|--------|
+| Keycloak | 8080 | 9000 (health/mgmt) | http://localhost:8080 | [keycloak.org](https://keycloak.org) | Identity & SSO |
+| Authentik | 9000 | 9443 (HTTPS) | http://localhost:9000 | [goauthentik.io](https://goauthentik.io) | Identity Provider |
+| Zitadel | 8080 | 8081 | http://localhost:8080 | [zitadel.com](https://zitadel.com) | Identity Platform |
+| Casdoor | 8000 | 8001 | http://localhost:8000 | [casdoor.org](https://casdoor.org) | Identity & SSO |
+| Ory Hydra | 4444 | 4445 (admin) | - | [ory.sh/hydra](https://ory.sh/hydra) | OAuth2 Server |
+| Ory Kratos | 4433 | 4434 (admin) | - | [ory.sh/kratos](https://ory.sh/kratos) | Identity Management |
+| Ory Keto | 4456 | 4466 (admin) | - | [ory.sh/keto](https://ory.sh/keto) | Authorization |
+| Ory Oathkeeper | 4455 | 4456 (API) | - | [ory.sh/oathkeeper](https://ory.sh/oathkeeper) | Identity Proxy |
+| Dex | 5556 | 5557 | - | [dexidp.io](https://dexidp.io) | OIDC Connector |
+| Authelia | 9091 | 9092 | http://localhost:9091 | [authelia.com](https://authelia.com) | 2FA Portal |
+| OAuth2 Proxy | 4180 | 4181 | - | [oauth2-proxy.github.io](https://oauth2-proxy.github.io) | Auth Proxy |
+| Logto | 3001 | 3002 (admin) | http://localhost:3001 | [logto.io](https://logto.io) | Identity Platform |
+| SuperTokens | 3567 | 3568 | - | [supertokens.com](https://supertokens.com) | Auth Service |
+| FusionAuth | 9011 | 9012 | http://localhost:9011 | [fusionauth.io](https://fusionauth.io) | Identity Platform |
+| WSO2 Identity Server | 9443 | 9763 | https://localhost:9443 | [wso2.com](https://wso2.com) | Identity Server |
+| OpenLDAP | 389 | 636 (LDAPS) | - | [openldap.org](https://openldap.org) | Directory Server |
+| 389 Directory Server | 389 | 636 (LDAPS) | - | [port389.org](https://port389.org) | Directory Server |
+| Apache Directory Server | 10389 | 10636 (LDAPS) | - | [directory.apache.org](https://directory.apache.org) | Directory Server |
+| FreeIPA | 389 | 636 (LDAPS), 88 (Kerberos), 80/443 (web) | https://localhost | [freeipa.org](https://freeipa.org) | Identity Management |
+| HashiCorp Vault | 8200 | 8201 (cluster) | http://localhost:8200 | [vaultproject.io](https://vaultproject.io) | Secrets Management |
+| OpenBao | 8200 | 8201 (cluster) | http://localhost:8200 | [openbao.org](https://openbao.org) | Secrets Management |
+| Infisical | 80 | 8080 (API) | http://localhost | [infisical.com](https://infisical.com) | Secrets Management |
+| Teleport | 3023 (auth) | 3024 (SSH), 3025 (proxy), 3022 (node), 3028 (k8s), 3080 (web) | https://localhost:3080 | [goteleport.com](https://goteleport.com) | Access Plane |
+| Boundary | 9200 | 9201 (cluster), 9202 (proxy) | http://localhost:9200 | [boundaryproject.io](https://boundaryproject.io) | Secure Access |
+| step-ca | 9000 | 9001 | - | [smallstep.com](https://smallstep.com) | Private CA |
+| SPIRE Server | 8081 | - | - | [spiffe.io](https://spiffe.io) | Workload Identity |
+| Kanidm | 8443 | 3636 (LDAP) | https://localhost:8443 | [kanidm.com](https://kanidm.com) | Identity Management |
+| Okta / Auth0 / Entra ID | - | - | cloud | [okta.com](https://okta.com) | Cloud Identity |
+| Clerk | - | - | cloud | [clerk.com](https://clerk.com) | Auth for Apps |
 
 ## Data Processing & Workflow Tools
 
