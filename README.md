@@ -34,6 +34,7 @@
 - [Collaboration & Communication](#collaboration--communication)
 - [Analytics, BI & Feature Flags](#analytics-bi--feature-flags)
 - [Error Tracking & APM](#error-tracking--apm)
+- [Local Cloud Emulators](#local-cloud-emulators)
 - [Useful Commands](#useful-commands)
 
 ## Development Tools
@@ -1071,6 +1072,28 @@ sudo rabbitmqctl set_permissions -p / admin ".*" ".*" ".*"
 | Datadog Agent | 8125 (DogStatsD) | 8126 (APM) | - | [docs.datadoghq.com](https://docs.datadoghq.com) | Agent & APM |
 | Bugsnag / Rollbar / Honeybadger | - | - | cloud | [bugsnag.com](https://bugsnag.com) | Cloud Error Tracking |
 | New Relic / Dynatrace / Elastic | - | - | cloud | [newrelic.com](https://newrelic.com) | Cloud APM |
+
+## Local Cloud Emulators
+
+| Tool | Default Port | Alternative Ports | Web UI | Website | Purpose |
+|------|-------------|------------------|--------|---------|--------|
+| LocalStack | 4566 | per-service legacy ports | http://localhost:4566 | [localstack.cloud](https://localstack.cloud) | AWS Emulator |
+| Azurite | 10000 (Blob) | 10001 (Queue), 10002 (Table) | - | [github.com/Azure/Azurite](https://github.com/Azure/Azurite) | Azure Storage Emulator |
+| DynamoDB Local | 8000 | 8001 | http://localhost:8000/shell | [docs.aws.amazon.com](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DynamoDBLocal.html) | DynamoDB Emulator |
+| ElasticMQ | 9324 | 9325 | http://localhost:9324 | [github.com/softwaremill/elasticmq](https://github.com/softwaremill/elasticmq) | SQS Emulator |
+| GoAws | 4100 | 4101 | http://localhost:4100 | [github.com/Admiral-Piett/goaws](https://github.com/Admiral-Piett/goaws) | SQS/SNS Emulator |
+| Moto Server | 5000 | 5001 | - | [github.com/getmoto/moto](https://github.com/getmoto/moto) | AWS Mock |
+| Step Functions Local | 8083 | 8084 | - | [docs.aws.amazon.com](https://docs.aws.amazon.com/step-functions) | Step Functions Emulator |
+| SAM Local | 3000 (API) | 3001 (Lambda) | - | [docs.aws.amazon.com](https://docs.aws.amazon.com/serverless-application-model) | Lambda Emulator |
+| Serverless Offline | 3000 | 3001 | - | [github.com/dherault/serverless-offline](https://github.com/dherault/serverless-offline) | Lambda Emulator |
+| Firebase Emulator Suite | 4000 (UI) | 4400 (hub), 5000 (hosting), 5001 (functions), 8080 (firestore), 8085 (pubsub), 9000 (database), 9099 (auth), 9199 (storage) | http://localhost:4000 | [firebase.google.com/docs/emulator-suite](https://firebase.google.com/docs/emulator-suite) | Firebase Emulator |
+| Pub/Sub Emulator | 8085 | 8086 | - | [cloud.google.com/pubsub/docs/emulator](https://cloud.google.com/pubsub/docs/emulator) | GCP Pub/Sub |
+| Firestore Emulator | 8080 | 8081 | - | [cloud.google.com/firestore/docs/emulator](https://cloud.google.com/firestore/docs/emulator) | GCP Firestore |
+| Datastore Emulator | 8081 | 8082 | - | [cloud.google.com/datastore/docs/tools/datastore-emulator](https://cloud.google.com/datastore/docs/tools/datastore-emulator) | GCP Datastore |
+| Bigtable Emulator | 8086 | 8087 | - | [cloud.google.com/bigtable/docs/emulator](https://cloud.google.com/bigtable/docs/emulator) | GCP Bigtable |
+| Spanner Emulator | 9010 (gRPC) | 9020 (REST) | - | [cloud.google.com/spanner/docs/emulator](https://cloud.google.com/spanner/docs/emulator) | GCP Spanner |
+| BigQuery Emulator | 9050 | 9051 | - | [github.com/goccy/bigquery-emulator](https://github.com/goccy/bigquery-emulator) | BigQuery Emulator |
+| Fake GCS Server | 4443 | 4444 | - | [github.com/fsouza/fake-gcs-server](https://github.com/fsouza/fake-gcs-server) | GCS Emulator |
 
 ## Best Practices
 
