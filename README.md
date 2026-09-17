@@ -28,7 +28,7 @@
 - [Apache Tools](#apache-tools)
 - [Big Data & Hadoop Ecosystem](#big-data--hadoop-ecosystem)
 - [Log Management](#log-management)
-- [System Ports](#system-ports)
+- [System & Well-Known Ports](#system--well-known-ports)
 - [Object Storage & File Services](#object-storage--file-services)
 - [Email & Notification Services](#email--notification-services)
 - [Collaboration & Communication](#collaboration--communication)
@@ -839,13 +839,88 @@ sudo rabbitmqctl set_permissions -p / admin ".*" ".*" ".*"
 | Splunk Indexer | 9997 | TCP | Indexer receiving |
 | Splunk Management | 8089 | HTTPS | Splunkd management |
 
-## System Ports
+## System & Well-Known Ports
+
+### Port Ranges
 
 | Port Range | Name | Description |
-|------------|------|------------|
-| 0-1023 | System Ports | Reserved system ports |
-| 1024-49151 | Registered Ports | Registered ports |
-| 49152-65535 | Dynamic/Private Ports | Private ports |
+|------------|------|-------------|
+| 0-1023 | System / Well-Known Ports | Reserved for privileged services (root/admin) |
+| 1024-49151 | Registered / User Ports | Assigned by IANA to applications |
+| 49152-65535 | Dynamic / Ephemeral Ports | Temporary client-side ports |
+
+### Well-Known Ports Quick Reference
+
+| Port | Protocol | Service | Description |
+|------|----------|---------|-------------|
+| 20 | TCP | FTP Data | File transfer data channel |
+| 21 | TCP | FTP Control | File transfer control |
+| 22 | TCP | SSH / SFTP / SCP | Secure shell & file transfer |
+| 23 | TCP | Telnet | Unencrypted remote shell |
+| 25 | TCP | SMTP | Mail transfer |
+| 53 | UDP/TCP | DNS | Domain name resolution |
+| 67/68 | UDP | DHCP | Dynamic host configuration |
+| 69 | UDP | TFTP | Trivial file transfer |
+| 80 | TCP | HTTP | Web traffic |
+| 88 | TCP/UDP | Kerberos | Authentication |
+| 110 | TCP | POP3 | Mail retrieval |
+| 111 | TCP/UDP | rpcbind | RPC port mapper |
+| 119 | TCP | NNTP | Usenet news |
+| 123 | UDP | NTP | Time synchronization |
+| 135 | TCP | MS RPC | Windows RPC |
+| 137-139 | TCP/UDP | NetBIOS | Windows name service |
+| 143 | TCP | IMAP | Mail access |
+| 161/162 | UDP | SNMP | Network management |
+| 179 | TCP | BGP | Routing |
+| 194 | TCP | IRC | Chat |
+| 389 | TCP/UDP | LDAP | Directory service |
+| 443 | TCP | HTTPS | Secure web traffic |
+| 445 | TCP | SMB / CIFS | Windows file sharing |
+| 464 | TCP/UDP | Kerberos kpasswd | Password change |
+| 465 | TCP | SMTPS | Secure mail submission |
+| 500 | UDP | IKE / IPsec | VPN key exchange |
+| 514 | UDP | Syslog | System logging |
+| 587 | TCP | SMTP Submission | Mail submission |
+| 631 | TCP | IPP | Internet printing |
+| 636 | TCP | LDAPS | Secure LDAP |
+| 873 | TCP | rsync | File synchronization |
+| 993 | TCP | IMAPS | Secure IMAP |
+| 995 | TCP | POP3S | Secure POP3 |
+| 1080 | TCP | SOCKS | Proxy protocol |
+| 1194 | UDP | OpenVPN | VPN |
+| 1433 | TCP | MS SQL Server | Database |
+| 1521 | TCP | Oracle Database | Database |
+| 1701 | UDP | L2TP | VPN |
+| 1723 | TCP | PPTP | VPN (legacy) |
+| 1812/1813 | UDP | RADIUS | AAA |
+| 2049 | TCP/UDP | NFS | Network file system |
+| 3128 | TCP | Squid | Proxy cache |
+| 3260 | TCP | iSCSI | Block storage |
+| 3306 | TCP | MySQL / MariaDB | Database |
+| 3389 | TCP | RDP | Remote desktop |
+| 3478 | UDP/TCP | STUN / TURN | NAT traversal |
+| 3690 | TCP | SVN | Version control |
+| 4500 | UDP | IPsec NAT-T | VPN |
+| 5060/5061 | TCP/UDP | SIP | VoIP signaling |
+| 5353 | UDP | mDNS | Local service discovery |
+| 5432 | TCP | PostgreSQL | Database |
+| 5672 | TCP | AMQP | Messaging |
+| 5900 | TCP | VNC | Remote desktop |
+| 5984 | TCP | CouchDB | Database |
+| 6379 | TCP | Redis | Cache |
+| 6443 | TCP | Kubernetes API | Container orchestration |
+| 6667 | TCP | IRC | Chat |
+| 8080 | TCP | HTTP Alternate | Web apps & proxies |
+| 8443 | TCP | HTTPS Alternate | Secure web apps |
+| 8883 | TCP | MQTT over TLS | Secure MQTT |
+| 9092 | TCP | Kafka | Event streaming |
+| 9200 | TCP | Elasticsearch | Search |
+| 9418 | TCP | Git | Git protocol |
+| 11211 | TCP/UDP | Memcached | Cache |
+| 15672 | TCP | RabbitMQ Management | Messaging UI |
+| 27017 | TCP | MongoDB | Database |
+| 51820 | UDP | WireGuard | VPN |
+| 61616 | TCP | ActiveMQ | Messaging |
 
 ## Common Development Ports
 
