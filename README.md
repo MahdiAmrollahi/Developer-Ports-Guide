@@ -36,6 +36,7 @@
 - [Error Tracking & APM](#error-tracking--apm)
 - [Local Cloud Emulators](#local-cloud-emulators)
 - [Blockchain & Web3](#blockchain--web3)
+- [IoT & Home Automation](#iot--home-automation)
 - [Useful Commands](#useful-commands)
 
 ## Development Tools
@@ -1119,6 +1120,31 @@ sudo rabbitmqctl set_permissions -p / admin ".*" ".*" ".*"
 | IPFS | 5001 (API) | 4001 (swarm), 8080 (gateway), 8081 (web UI) | HTTP | [ipfs.tech](https://ipfs.tech) | Distributed Files |
 | Filecoin Lotus | 1234 | 3453 (metrics) | JSON-RPC | [filecoin.io](https://filecoin.io) | Filecoin Node |
 | Blockscout | 4000 | 4001 | http://localhost:4000 | [blockscout.com](https://blockscout.com) | EVM Explorer |
+
+## IoT & Home Automation
+
+| Tool | Default Port | Alternative Ports | Web UI | Website | Purpose |
+|------|-------------|------------------|--------|---------|--------|
+| Home Assistant | 8123 | 8124 | http://localhost:8123 | [home-assistant.io](https://home-assistant.io) | Home Automation |
+| Node-RED | 1880 | 1881 | http://localhost:1880 | [nodered.org](https://nodered.org) | Flow Automation |
+| Zigbee2MQTT | 8080 | 8081 | http://localhost:8080 | [zigbee2mqtt.io](https://zigbee2mqtt.io) | Zigbee Bridge |
+| ESPHome | 6052 | 6053 | http://localhost:6052 | [esphome.io](https://esphome.io) | ESP Device Management |
+| openHAB | 8080 | 8443 (HTTPS), 8101 (console) | http://localhost:8080 | [openhab.org](https://openhab.org) | Home Automation |
+| Mosquitto | 1883 | 8883 (TLS), 9001 (WS) | - | [mosquitto.org](https://mosquitto.org) | MQTT Broker |
+| EMQX | 1883 | 8883 (TLS), 8083/8084 (WS), 18083 (dashboard) | http://localhost:18083 | [emqx.io](https://emqx.io) | MQTT Broker |
+| The Things Stack | 1883 | 8883 (TLS), 1885, 1700 (gateway) | http://localhost | [thethingsindustries.com](https://thethingsindustries.com) | LoRaWAN Server |
+| ChirpStack | 8080 | 1700 (gateway), 8000 (NS), 1883 (MQTT) | http://localhost:8080 | [chirpstack.io](https://chirpstack.io) | LoRaWAN Server |
+| ThingsBoard | 8080 | 1883 (MQTT), 5683 (CoAP) | http://localhost:8080 | [thingsboard.io](https://thingsboard.io) | IoT Platform |
+| Eclipse Ditto | 8080 | 1883 (MQTT) | http://localhost:8080 | [eclipse.dev/ditto](https://eclipse.dev/ditto) | Digital Twins |
+| Frigate NVR | 5000 | 8971 (auth), 8554 (go2rtc), 1984 (go2rtc UI) | http://localhost:5000 | [frigate.video](https://frigate.video) | Camera NVR |
+| Scrypted | 10443 | 11080 | https://localhost:10443 | [scrypted.app](https://scrypted.app) | Camera Hub |
+| ZoneMinder | 80 | 443 | http://localhost | [zoneminder.com](https://zoneminder.com) | Camera NVR |
+| OctoPrint | 5000 | 5001 | http://localhost:5000 | [octoprint.org](https://octoprint.org) | 3D Printer Control |
+| Moonraker (Klipper) | 7125 | 7126 | - | [moonraker.readthedocs.io](https://moonraker.readthedocs.io) | 3D Printer API |
+| Pi-hole | 53 (DNS) | 80 (web), 443 | http://localhost/admin | [pi-hole.net](https://pi-hole.net) | DNS Ad Blocker |
+| AdGuard Home | 53 (DNS) | 3000 (setup), 80 (web) | http://localhost:3000 | [adguard.com/adguard-home](https://adguard.com/adguard-home) | DNS Ad Blocker |
+| Homebridge | 8581 | 8582 | http://localhost:8581 | [homebridge.io](https://homebridge.io) | HomeKit Bridge |
+| Matter | 5540/UDP | - | - | [buildwithmatter.com](https://buildwithmatter.com) | Smart Home Standard |
 
 ## Best Practices
 
