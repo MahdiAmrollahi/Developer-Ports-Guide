@@ -32,6 +32,7 @@
 - [Object Storage & File Services](#object-storage--file-services)
 - [Email & Notification Services](#email--notification-services)
 - [Collaboration & Communication](#collaboration--communication)
+- [Analytics, BI & Feature Flags](#analytics-bi--feature-flags)
 - [Useful Commands](#useful-commands)
 
 ## Development Tools
@@ -1012,6 +1013,48 @@ sudo rabbitmqctl set_permissions -p / admin ".*" ".*" ".*"
 | Zammad | 8080 | 8081 | http://localhost:8080 | [zammad.com](https://zammad.com) | Helpdesk |
 | osTicket | 80 | 443 | http://localhost | [osticket.com](https://osticket.com) | Ticketing |
 | GLPI | 80 | 443 | http://localhost | [glpi-project.org](https://glpi-project.org) | ITSM |
+
+## Analytics, BI & Feature Flags
+
+### Product & Web Analytics
+
+| Tool | Default Port | Alternative Ports | Web UI | Website | Purpose |
+|------|-------------|------------------|--------|---------|--------|
+| PostHog | 8000 | 8001 | http://localhost:8000 | [posthog.com](https://posthog.com) | Product Analytics |
+| Plausible | 8000 | 8001 | http://localhost:8000 | [plausible.io](https://plausible.io) | Web Analytics |
+| Umami | 3000 | 3001 | http://localhost:3000 | [umami.is](https://umami.is) | Web Analytics |
+| Matomo | 80 | 443 | http://localhost | [matomo.org](https://matomo.org) | Web Analytics |
+| Ackee | 3000 | 3001 | http://localhost:3000 | [ackee.dev](https://ackee.dev) | Web Analytics |
+| Countly | 80 | 443 | http://localhost | [countly.com](https://countly.com) | Product Analytics |
+| OpenReplay | 8080 | 8081 | http://localhost:8080 | [openreplay.com](https://openreplay.com) | Session Replay |
+| Highlight | 3000 | 8082 (backend) | http://localhost:3000 | [highlight.io](https://highlight.io) | Session Replay |
+| Fathom (self-hosted) | 8080 | 8081 | http://localhost:8080 | [usefathom.com](https://usefathom.com) | Web Analytics |
+| Google Analytics / Mixpanel / Amplitude | - | - | cloud | - | Cloud Analytics |
+
+### BI & Dashboards
+
+| Tool | Default Port | Alternative Ports | Web UI | Website | Purpose |
+|------|-------------|------------------|--------|---------|--------|
+| Metabase | 3000 | 3001 | http://localhost:3000 | [metabase.com](https://metabase.com) | Business Intelligence |
+| Redash | 5000 | 5001 | http://localhost:5000 | [redash.io](https://redash.io) | Business Intelligence |
+| Lightdash | 8080 | 8081 | http://localhost:8080 | [lightdash.com](https://lightdash.com) | BI for dbt |
+| Cube | 4000 | 4001 | http://localhost:4000 | [cube.dev](https://cube.dev) | Semantic Layer |
+| Apache Superset | 8088 | 8089 | http://localhost:8088 | [superset.apache.org](https://superset.apache.org) | Business Intelligence |
+| Tableau Server | 80 | 443, 8850 | https://localhost | [tableau.com](https://tableau.com) | Business Intelligence |
+| Power BI Report Server | 80 | 443 | http://localhost | [powerbi.microsoft.com](https://powerbi.microsoft.com) | Business Intelligence |
+| Qlik Sense | 443 | 4243 | https://localhost | [qlik.com](https://qlik.com) | Business Intelligence |
+| Evidence | 3000 | 3001 | http://localhost:3000 | [evidence.dev](https://evidence.dev) | BI as Code |
+| Looker / Looker Studio | - | - | cloud | [looker.com](https://looker.com) | Cloud BI |
+
+### Feature Flags & A/B Testing
+
+| Tool | Default Port | Alternative Ports | Web UI | Website | Purpose |
+|------|-------------|------------------|--------|---------|--------|
+| Unleash | 4242 | 4243 | http://localhost:4242 | [getunleash.io](https://getunleash.io) | Feature Flags |
+| Flagsmith | 8000 | 8001 | http://localhost:8000 | [flagsmith.com](https://flagsmith.com) | Feature Flags |
+| Flipt | 8080 | 9000 (gRPC) | http://localhost:8080 | [flipt.io](https://flipt.io) | Feature Flags |
+| GrowthBook | 3000 | 3100 (API) | http://localhost:3000 | [growthbook.io](https://growthbook.io) | A/B Testing |
+| LaunchDarkly / Optimizely / Split | - | - | cloud | - | Cloud Feature Flags |
 
 ## Best Practices
 
