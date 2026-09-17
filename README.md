@@ -30,6 +30,7 @@
 - [Log Management](#log-management)
 - [System Ports](#system-ports)
 - [Object Storage & File Services](#object-storage--file-services)
+- [Email & Notification Services](#email--notification-services)
 - [Useful Commands](#useful-commands)
 
 ## Development Tools
@@ -902,6 +903,48 @@ sudo rabbitmqctl set_permissions -p / admin ".*" ".*" ".*"
 | Nextcloud | 80 | 443 | http://localhost | [nextcloud.com](https://nextcloud.com) | File Collaboration |
 | Seafile | 80 | 443, 8082 (fileserver) | http://localhost | [seafile.com](https://seafile.com) | File Sync & Share |
 | ownCloud | 80 | 443 | http://localhost | [owncloud.com](https://owncloud.com) | File Collaboration |
+
+## Email & Notification Services
+
+### Mail Servers & Protocols
+
+| Service | Ports | Protocol | Website | Purpose |
+|---------|-------|----------|---------|--------|
+| SMTP | 25 | TCP | - | Mail transfer |
+| SMTP Submission | 587 | TCP/STARTTLS | - | Client submission |
+| SMTPS | 465 | TCP/TLS | - | Secure SMTP |
+| POP3 | 110 | TCP | - | Mail retrieval |
+| POP3S | 995 | TCP/TLS | - | Secure POP3 |
+| IMAP | 143 | TCP | - | Mail access |
+| IMAPS | 993 | TCP/TLS | - | Secure IMAP |
+| ManageSieve | 4190 | TCP | - | Sieve scripts |
+| LMTP | 24 | TCP | - | Local mail transfer |
+| Postfix | 25, 587, 465 | SMTP | [postfix.org](https://postfix.org) | MTA |
+| Dovecot | 143, 993, 110, 995 | IMAP/POP3 | [dovecot.org](https://dovecot.org) | Mail Server |
+| Exim | 25, 587 | SMTP | [exim.org](https://exim.org) | MTA |
+| Roundcube | 80, 443 | HTTP | [roundcube.net](https://roundcube.net) | Webmail |
+| Mailu | 25, 80, 443, 993 | Multi | [mailu.io](https://mailu.io) | Mail Server Suite |
+| iRedMail | 25, 80, 443, 993 | Multi | [iredmail.org](https://iredmail.org) | Mail Server Suite |
+| Mailcow | 25, 80, 443, 993, 8443 | Multi | [mailcow.email](https://mailcow.email) | Mail Server Suite |
+
+### Mail Testing & Notifications
+
+| Tool | Default Port | Alternative Ports | Web UI | Website | Purpose |
+|------|-------------|------------------|--------|---------|--------|
+| Mailpit | 1025 (SMTP) | 8025 (UI) | http://localhost:8025 | [mailpit.axllent.org](https://mailpit.axllent.org) | Mail Testing |
+| MailHog | 1025 (SMTP) | 8025 (UI) | http://localhost:8025 | [github.com/mailhog/MailHog](https://github.com/mailhog/MailHog) | Mail Testing |
+| MailCatcher | 1025 (SMTP) | 1080 (UI) | http://localhost:1080 | [mailcatcher.me](https://mailcatcher.me) | Mail Testing |
+| Maildev | 1025 (SMTP) | 1080 (UI) | http://localhost:1080 | [github.com/maildev/maildev](https://github.com/maildev/maildev) | Mail Testing |
+| Ethereal | - | - | cloud | [ethereal.email](https://ethereal.email) | Fake SMTP |
+| Listmonk | 9000 | 9001 | http://localhost:9000 | [listmonk.app](https://listmonk.app) | Newsletter Platform |
+| Gotify | 80 | 8080 (Docker) | http://localhost | [gotify.net](https://gotify.net) | Push Notifications |
+| ntfy | 80 | 8080 (Docker), 2586 | http://localhost | [ntfy.sh](https://ntfy.sh) | Push Notifications |
+| Apprise API | 8000 | 8001 | http://localhost:8000 | [github.com/caronc/apprise-api](https://github.com/caronc/apprise-api) | Notification Gateway |
+| Novu | 3000 | 3001 (API) | http://localhost:3000 | [novu.co](https://novu.co) | Notification Infrastructure |
+| Centrifugo | 8000 | 8001 | http://localhost:8000 | [centrifugal.dev](https://centrifugal.dev) | Realtime Messaging |
+| Soketi | 6001 | 6002 | - | [soketi.app](https://soketi.app) | Pusher-Compatible WS |
+| Twilio / SendGrid / Mailgun | - | - | cloud | [twilio.com](https://twilio.com) | Cloud Messaging |
+| Slack / Discord / Teams Webhooks | - | - | cloud | - | Team Notifications |
 
 ## Best Practices
 
