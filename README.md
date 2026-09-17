@@ -31,6 +31,7 @@
 - [System Ports](#system-ports)
 - [Object Storage & File Services](#object-storage--file-services)
 - [Email & Notification Services](#email--notification-services)
+- [Collaboration & Communication](#collaboration--communication)
 - [Useful Commands](#useful-commands)
 
 ## Development Tools
@@ -945,6 +946,72 @@ sudo rabbitmqctl set_permissions -p / admin ".*" ".*" ".*"
 | Soketi | 6001 | 6002 | - | [soketi.app](https://soketi.app) | Pusher-Compatible WS |
 | Twilio / SendGrid / Mailgun | - | - | cloud | [twilio.com](https://twilio.com) | Cloud Messaging |
 | Slack / Discord / Teams Webhooks | - | - | cloud | - | Team Notifications |
+
+## Collaboration & Communication
+
+### Chat & Team Communication
+
+| Tool | Default Port | Alternative Ports | Web UI | Website | Purpose |
+|------|-------------|------------------|--------|---------|--------|
+| Mattermost | 8065 | 8066 | http://localhost:8065 | [mattermost.com](https://mattermost.com) | Team Chat |
+| Rocket.Chat | 3000 | 3001 | http://localhost:3000 | [rocket.chat](https://rocket.chat) | Team Chat |
+| Zulip | 80 | 443 | http://localhost | [zulip.com](https://zulip.com) | Team Chat |
+| Matrix Synapse | 8008 (client) | 8448 (federation), 443 | http://localhost:8008 | [matrix.org](https://matrix.org) | Decentralized Chat |
+| Element Web | 80 | 443 | http://localhost | [element.io](https://element.io) | Matrix Client |
+| Dendrite | 8008 | 8448 (federation) | http://localhost:8008 | [github.com/matrix-org/dendrite](https://github.com/matrix-org/dendrite) | Matrix Homeserver |
+| Revolt | 80 | 443 | http://localhost | [revolt.chat](https://revolt.chat) | Chat Platform |
+| IRC | 6667 | 6697 (TLS), 7000 | - | - | IRC Protocol |
+| XMPP | 5222 | 5269 (server), 5280 (BOSH), 5281 (WS) | - | [xmpp.org](https://xmpp.org) | Messaging Protocol |
+
+### Video Conferencing & VoIP
+
+| Tool | Main Port | Alternative Ports | Web UI | Website | Purpose |
+|------|-----------|------------------|--------|---------|--------|
+| Jitsi Meet | 80 | 443, 4443 (TLS), 10000/UDP (media) | http://localhost | [jitsi.org](https://jitsi.org) | Video Conferencing |
+| BigBlueButton | 80 | 443, 16384-32768/UDP (media), 5060 (SIP) | http://localhost | [bigbluebutton.org](https://bigbluebutton.org) | Virtual Classroom |
+| LiveKit | 7880 | 7881 (RTC/TCP), 50000-60000/UDP | http://localhost:7880 | [livekit.io](https://livekit.io) | WebRTC SFU |
+| Janus WebRTC | 8088 | 8188 (WS), 7088 (admin) | - | [janus.conf.meetecho.com](https://janus.conf.meetecho.com) | WebRTC Server |
+| coturn | 3478 | 5349 (TLS), 49152-65535 (relay) | - | [github.com/coturn/coturn](https://github.com/coturn/coturn) | TURN / STUN |
+| Asterisk | 5060 | 5061 (TLS), 5038 (AMI), 8088 (ARI) | - | [asterisk.org](https://asterisk.org) | PBX |
+| FreeSWITCH | 5060 | 5061 (TLS), 5080, 8021 (ESL) | - | [freeswitch.com](https://freeswitch.com) | Softswitch |
+| Kamailio | 5060 | 5061 (TLS) | - | [kamailio.org](https://kamailio.org) | SIP Server |
+| OpenSIPS | 5060 | 5061 (TLS) | - | [opensips.org](https://opensips.org) | SIP Server |
+| Mumble | 64738 | 64739 | - | [mumble.info](https://mumble.info) | Voice Chat |
+| TeamSpeak | 9987/UDP | 10011 (query), 30033 (file) | - | [teamspeak.com](https://teamspeak.com) | Voice Chat |
+| SIP | 5060 | 5061 (TLS) | - | - | VoIP Signaling |
+| RTP Media | 10000-20000/UDP | - | - | - | Media Transport |
+
+### Documentation, Wikis & Office
+
+| Tool | Default Port | Alternative Ports | Web UI | Website | Purpose |
+|------|-------------|------------------|--------|---------|--------|
+| Wiki.js | 3000 | 3001 | http://localhost:3000 | [js.wiki](https://js.wiki) | Wiki |
+| Outline | 3000 | 3001 | http://localhost:3000 | [getoutline.com](https://getoutline.com) | Knowledge Base |
+| BookStack | 80 | 443 | http://localhost | [bookstackapp.com](https://bookstackapp.com) | Wiki |
+| HedgeDoc | 3000 | 3001 | http://localhost:3000 | [hedgedoc.org](https://hedgedoc.org) | Collaborative Markdown |
+| Etherpad | 9001 | 9002 | http://localhost:9001 | [etherpad.org](https://etherpad.org) | Collaborative Editor |
+| CryptPad | 3000 | 3001 | http://localhost:3000 | [cryptpad.fr](https://cryptpad.fr) | Encrypted Collaboration |
+| Trilium Notes | 8080 | 8081 | http://localhost:8080 | [github.com/TriliumNext/Trilium](https://github.com/TriliumNext/Trilium) | Knowledge Base |
+| OnlyOffice Document Server | 80 | 443 | http://localhost | [onlyoffice.com](https://onlyoffice.com) | Office Suite |
+| Collabora Online | 9980 | 9981 | http://localhost:9980 | [collaboraonline.com](https://collaboraonline.com) | Office Suite |
+
+### Project Management & ITSM
+
+| Tool | Default Port | Alternative Ports | Web UI | Website | Purpose |
+|------|-------------|------------------|--------|---------|--------|
+| Jira | 8080 | 8081 | http://localhost:8080 | [atlassian.com/jira](https://atlassian.com/jira) | Issue Tracking |
+| Confluence | 8090 | 8091 | http://localhost:8090 | [atlassian.com/confluence](https://atlassian.com/confluence) | Wiki |
+| OpenProject | 8080 | 8081 | http://localhost:8080 | [openproject.org](https://openproject.org) | Project Management |
+| Redmine | 3000 | 3001 | http://localhost:3000 | [redmine.org](https://redmine.org) | Project Management |
+| Taiga | 9000 | 9001 | http://localhost:9000 | [taiga.io](https://taiga.io) | Agile PM |
+| Plane | 3000 | 3001 | http://localhost:3000 | [plane.so](https://plane.so) | Project Management |
+| Vikunja | 3456 | 3457 | http://localhost:3456 | [vikunja.io](https://vikunja.io) | Task Management |
+| Focalboard | 8000 | 8001 | http://localhost:8000 | [focalboard.com](https://focalboard.com) | Kanban Boards |
+| Leantime | 8080 | 8081 | http://localhost:8080 | [leantime.io](https://leantime.io) | Project Management |
+| Odoo | 8069 | 8072 (longpolling) | http://localhost:8069 | [odoo.com](https://odoo.com) | ERP Suite |
+| Zammad | 8080 | 8081 | http://localhost:8080 | [zammad.com](https://zammad.com) | Helpdesk |
+| osTicket | 80 | 443 | http://localhost | [osticket.com](https://osticket.com) | Ticketing |
+| GLPI | 80 | 443 | http://localhost | [glpi-project.org](https://glpi-project.org) | ITSM |
 
 ## Best Practices
 
