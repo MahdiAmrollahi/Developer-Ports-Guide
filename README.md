@@ -589,6 +589,18 @@ sudo rabbitmqctl set_permissions -p / admin ".*" ".*" ".*"
 | Newman | 3000 | 3001 | - | [postman.com](https://postman.com) | API Testing |
 | Insomnia | 3000 | 3001 | - | [insomnia.rest](https://insomnia.rest) | API Testing |
 | REST Assured | 3000 | 3001 | - | [rest-assured.io](https://rest-assured.io) | API Testing |
+| Locust | 8089 | 8090 | http://localhost:8089 | [locust.io](https://locust.io) | Load Testing |
+| Vegeta | - | - | - | [github.com/tsenart/vegeta](https://github.com/tsenart/vegeta) | Load Testing |
+| WireMock | 8080 | 8081 | http://localhost:8080/__admin | [wiremock.org](https://wiremock.org) | API Mocking |
+| Mockoon | 3001 | 3002 | http://localhost:3001 | [mockoon.com](https://mockoon.com) | API Mocking |
+| Prism | 4010 | 4011 | - | [stoplight.io/open-source/prism](https://stoplight.io/open-source/prism) | API Mocking |
+| Pact Broker | 9292 | 9293 | http://localhost:9292 | [pact.io](https://pact.io) | Contract Testing |
+| SonarQube | 9000 | 9001 | http://localhost:9000 | [sonarsource.com](https://sonarsource.com) | Code Quality |
+| Allure Report | 4040 | 4041 | http://localhost:4040 | [allure.com](https://allure.com) | Test Reporting |
+| Selenium Grid | 4444 (hub) | 4442/4443 (nodes), 7900 (console) | http://localhost:4444 | [selenium.dev](https://selenium.dev) | Grid Testing |
+| Appium | 4723 | 4724 | - | [appium.io](https://appium.io) | Mobile Testing |
+| Testcontainers | - | - | - | [testcontainers.com](https://testcontainers.com) | Integration Testing |
+| Karate | 8080 (mock) | 8081 | - | [karatelabs.github.io/karate](https://karatelabs.github.io/karate) | API Testing |
 
 ## Security Tools
 
@@ -612,6 +624,23 @@ sudo rabbitmqctl set_permissions -p / admin ".*" ".*" ".*"
 | Arachni | 7331 | 7332 | http://localhost:7331 | [arachni-scanner.com](https://arachni-scanner.com) | Web Security Scanner |
 | Wapiti | - | - | - | [wapiti.sourceforge.net](https://wapiti.sourceforge.net) | Web Vulnerability Scanner |
 | Vega | 8443 | 8444 | https://localhost:8443 | [subgraph.com/vega](https://subgraph.com/vega) | Web Security Scanner |
+| Trivy | - | - | - | [trivy.dev](https://trivy.dev) | Container Scanning |
+| Grype | - | - | - | [github.com/anchore/grype](https://github.com/anchore/grype) | Vulnerability Scanner |
+| Syft | - | - | - | [github.com/anchore/syft](https://github.com/anchore/syft) | SBOM Generator |
+| Semgrep | - | - | - | [semgrep.dev](https://semgrep.dev) | SAST |
+| Dependency-Track | 8080 | 8081 | http://localhost:8080 | [dependencytrack.org](https://dependencytrack.org) | Software Composition Analysis |
+| DefectDojo | 8080 | 8081 | http://localhost:8080 | [defectdojo.com](https://defectdojo.com) | Vulnerability Management |
+| Falco | 8765 (gRPC) | 5060 (gRPC legacy), 2801 (HTTP) | - | [falco.org](https://falco.org) | Runtime Security |
+| ClamAV | 3310 | 3311 | - | [clamav.net](https://clamav.net) | Antivirus |
+| CrowdSec | 8080 | 8081 | http://localhost:8080 | [crowdsec.net](https://crowdsec.net) | Intrusion Prevention |
+| Suricata | - | - | - | [suricata.io](https://suricata.io) | IDS / IPS |
+| Zeek | - | - | - | [zeek.org](https://zeek.org) | Network Analysis |
+| Fail2ban | - | - | - | [fail2ban.org](https://fail2ban.org) | Intrusion Prevention |
+| Wazuh | 55000 (API) | 1514/1515 (agent), 443/5601 (dashboard) | https://localhost | [wazuh.com](https://wazuh.com) | SIEM / XDR |
+| TheHive | 9000 | 9001 | http://localhost:9000 | [thehive-project.org](https://thehive-project.org) | Incident Response |
+| MISP | 80 | 443 | http://localhost | [misp-project.org](https://misp-project.org) | Threat Intelligence |
+| MobSF | 8000 | 8001 | http://localhost:8000 | [mobsf.github.io](https://mobsf.github.io) | Mobile Security |
+| Snyk | - | - | cloud | [snyk.io](https://snyk.io) | SCA (Cloud) |
 
 ## CI/CD
 
