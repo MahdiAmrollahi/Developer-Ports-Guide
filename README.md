@@ -29,6 +29,7 @@
 - [Big Data & Hadoop Ecosystem](#big-data--hadoop-ecosystem)
 - [Log Management](#log-management)
 - [System Ports](#system-ports)
+- [Object Storage & File Services](#object-storage--file-services)
 - [Useful Commands](#useful-commands)
 
 ## Development Tools
@@ -863,6 +864,44 @@ sudo rabbitmqctl set_permissions -p / admin ".*" ".*" ".*"
 | SignalR | 5000 | 5001 | WebSocket | ASP.NET Real-time |
 | Firebase | - | - | WebSocket | Google Real-time |
 | Deepstream | 6020 | 6021 | WebSocket | Real-time Server |
+
+## Object Storage & File Services
+
+### Self-Hosted Object Storage
+
+| Tool | Default Port | Alternative Ports | Web UI | Website | Purpose |
+|------|-------------|------------------|--------|---------|--------|
+| MinIO | 9000 (S3 API) | 9001 (console) | http://localhost:9001 | [min.io](https://min.io) | S3-Compatible Storage |
+| Ceph MON | 3300 | 6789 | - | [ceph.com](https://ceph.com) | Cluster Monitor |
+| Ceph OSD | 6800-7300 | - | - | [ceph.com](https://ceph.com) | Object Storage Daemon |
+| Ceph RGW | 7480 | 80/443 | - | [ceph.com](https://ceph.com) | S3/Swift Gateway |
+| Ceph Dashboard | 8443 | 8080 | https://localhost:8443 | [ceph.com](https://ceph.com) | Ceph UI |
+| SeaweedFS Master | 9333 | 9334 | http://localhost:9333 | [seaweedfs.com](https://seaweedfs.com) | Distributed Storage |
+| SeaweedFS Filer | 8888 | 8889 | http://localhost:8888 | [seaweedfs.com](https://seaweedfs.com) | File System |
+| SeaweedFS S3 | 8333 | 8334 | - | [seaweedfs.com](https://seaweedfs.com) | S3 API |
+| Garage | 3900 (S3) | 3901 (RPC), 3902 (admin), 3903 (web) | http://localhost:3903 | [garagehq.deuxfleurs.fr](https://garagehq.deuxfleurs.fr) | S3 Storage |
+| OpenStack Swift | 8080 (proxy) | 6000-6002 (backend) | - | [openstack.org](https://openstack.org) | Object Storage |
+| Cloudflare R2 | - | - | cloud | [cloudflare.com/r2](https://cloudflare.com/r2) | Cloud Object Storage |
+| Backblaze B2 | - | - | cloud | [backblaze.com](https://backblaze.com) | Cloud Object Storage |
+| Wasabi | - | - | cloud | [wasabi.com](https://wasabi.com) | Cloud Object Storage |
+
+### File Sharing & Sync
+
+| Tool | Default Port | Alternative Ports | Web UI | Website | Purpose |
+|------|-------------|------------------|--------|---------|--------|
+| NFS | 2049 | 111 (rpcbind), 20048 (mountd) | - | [nfs.sourceforge.net](https://nfs.sourceforge.net) | Network File System |
+| SMB / CIFS | 445 | 139 (NetBIOS) | - | [samba.org](https://samba.org) | Windows File Sharing |
+| Samba | 445 | 139, 137/138 (NetBIOS) | - | [samba.org](https://samba.org) | File Server |
+| rsync daemon | 873 | 874 | - | [rsync.samba.org](https://rsync.samba.org) | File Sync |
+| SFTP | 22 | 2222 | - | [openssh.com](https://openssh.com) | Secure File Transfer |
+| FTP | 21 | 20 (data), 990 (FTPS) | - | - | File Transfer |
+| iSCSI Target | 3260 | - | - | [open-iscsi.org](https://open-iscsi.org) | Block Storage |
+| WebDAV | 80 | 443 | - | [webdav.org](https://webdav.org) | HTTP File Access |
+| Syncthing | 8384 (UI) | 22000 (sync), 21027 (discovery) | http://localhost:8384 | [syncthing.net](https://syncthing.net) | File Sync |
+| Filebrowser | 8080 | 8081 | http://localhost:8080 | [filebrowser.org](https://filebrowser.org) | Web File Manager |
+| Nextcloud | 80 | 443 | http://localhost | [nextcloud.com](https://nextcloud.com) | File Collaboration |
+| Seafile | 80 | 443, 8082 (fileserver) | http://localhost | [seafile.com](https://seafile.com) | File Sync & Share |
+| ownCloud | 80 | 443 | http://localhost | [owncloud.com](https://owncloud.com) | File Collaboration |
 
 ## Best Practices
 
