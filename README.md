@@ -392,6 +392,47 @@
 | Datadog | - | - | - | [datadoghq.com](https://datadoghq.com) | Cloud Monitoring |
 | New Relic | - | - | - | [newrelic.com](https://newrelic.com) | APM |
 | AppDynamics | - | - | - | [appdynamics.com](https://appdynamics.com) | APM |
+| Alertmanager | 9093 | 9094 | http://localhost:9093 | [prometheus.io](https://prometheus.io) | Alert Routing |
+| node_exporter | 9100 | 9101 | http://localhost:9100 | [prometheus.io](https://prometheus.io) | Host Metrics |
+| Pushgateway | 9091 | 9092 | http://localhost:9091 | [prometheus.io](https://prometheus.io) | Batch Job Metrics |
+| cAdvisor | 8080 | 8081 | http://localhost:8080 | [github.com/google/cadvisor](https://github.com/google/cadvisor) | Container Metrics |
+| kube-state-metrics | 8080 | 8081 | - | [github.com/kubernetes/kube-state-metrics](https://github.com/kubernetes/kube-state-metrics) | Kubernetes Object Metrics |
+| VictoriaMetrics | 8428 | 8429 (vmagent), 8880 (vmalert) | http://localhost:8428 | [victoriametrics.com](https://victoriametrics.com) | Time Series DB |
+| Thanos Query | 10902 | 10901 (gRPC) | http://localhost:10902 | [thanos.io](https://thanos.io) | Long-Term Metrics |
+| Grafana Mimir | 9009 | 9095 (gRPC) | http://localhost:9009 | [grafana.com/oss/mimir](https://grafana.com/oss/mimir) | Scalable Metrics |
+| Grafana Tempo | 3200 | 4317/4318 (OTLP) | http://localhost:3200 | [grafana.com/oss/tempo](https://grafana.com/oss/tempo) | Distributed Tracing |
+| OpenTelemetry Collector | 4317 (gRPC) | 4318 (HTTP), 8888 (metrics), 13133 (health) | - | [opentelemetry.io](https://opentelemetry.io) | Telemetry Pipeline |
+| Netdata | 19999 | 20000 | http://localhost:19999 | [netdata.cloud](https://netdata.cloud) | Real-Time Monitoring |
+| Uptime Kuma | 3001 | 3002 | http://localhost:3001 | [github.com/louislam/uptime-kuma](https://github.com/louislam/uptime-kuma) | Uptime Monitoring |
+| Healthchecks | 8000 | 8001 | http://localhost:8000 | [healthchecks.io](https://healthchecks.io) | Cron Job Monitoring |
+| Gatus | 8080 | 8081 | http://localhost:8080 | [github.com/TwiN/gatus](https://github.com/TwiN/gatus) | Status Dashboard |
+| Beszel | 8090 | 8091 | http://localhost:8090 | [beszel.dev](https://beszel.dev) | Lightweight Monitoring |
+| Dozzle | 8080 | 8081 | http://localhost:8080 | [dozzle.dev](https://dozzle.dev) | Docker Log Viewer |
+| Icinga 2 | 5665 | 5666 | http://localhost/icingaweb2 | [icinga.com](https://icinga.com) | Infrastructure Monitoring |
+| Zabbix Server | 10051 | 10052 | http://localhost (frontend) | [zabbix.com](https://zabbix.com) | Network Monitoring |
+| Zabbix Agent | 10050 | 10051 | - | [zabbix.com](https://zabbix.com) | Host Agent |
+| Glances | 61208 | 61209 (XML-RPC) | http://localhost:61208 | [glances.readthedocs.io](https://glances.readthedocs.io) | System Monitoring |
+| Checkmk | 5000 | 6557 (agent) | http://localhost:5000 | [checkmk.com](https://checkmk.com) | Infrastructure Monitoring |
+
+### Prometheus Exporters
+
+| Exporter | Default Port | Monitors | Website |
+|----------|-------------|----------|---------|
+| node_exporter | 9100 | Linux/Unix hosts | [github.com/prometheus/node_exporter](https://github.com/prometheus/node_exporter) |
+| windows_exporter | 9182 | Windows hosts | [github.com/prometheus-community/windows_exporter](https://github.com/prometheus-community/windows_exporter) |
+| blackbox_exporter | 9115 | HTTP/TCP/ICMP probes | [github.com/prometheus/blackbox_exporter](https://github.com/prometheus/blackbox_exporter) |
+| postgres_exporter | 9187 | PostgreSQL | [github.com/prometheus-community/postgres_exporter](https://github.com/prometheus-community/postgres_exporter) |
+| mysqld_exporter | 9104 | MySQL/MariaDB | [github.com/prometheus/mysqld_exporter](https://github.com/prometheus/mysqld_exporter) |
+| redis_exporter | 9121 | Redis | [github.com/oliver006/redis_exporter](https://github.com/oliver006/redis_exporter) |
+| mongodb_exporter | 9216 | MongoDB | [github.com/percona/mongodb_exporter](https://github.com/percona/mongodb_exporter) |
+| elasticsearch_exporter | 9114 | Elasticsearch | [github.com/prometheus-community/elasticsearch_exporter](https://github.com/prometheus-community/elasticsearch_exporter) |
+| kafka_exporter | 9308 | Kafka | [github.com/danielqsj/kafka_exporter](https://github.com/danielqsj/kafka_exporter) |
+| nginx-prometheus-exporter | 9113 | Nginx | [github.com/nginxinc/nginx-prometheus-exporter](https://github.com/nginxinc/nginx-prometheus-exporter) |
+| haproxy_exporter | 9101 | HAProxy | [github.com/prometheus/haproxy_exporter](https://github.com/prometheus/haproxy_exporter) |
+| statsd_exporter | 9102 | StatsD metrics | [github.com/prometheus/statsd_exporter](https://github.com/prometheus/statsd_exporter) |
+| snmp_exporter | 9116 | SNMP devices | [github.com/prometheus/snmp_exporter](https://github.com/prometheus/snmp_exporter) |
+| process-exporter | 9256 | Linux processes | [github.com/ncabatoff/process-exporter](https://github.com/ncabatoff/process-exporter) |
+| json_exporter | 7979 | JSON endpoints | [github.com/prometheus-community/json_exporter](https://github.com/prometheus-community/json_exporter) |
 
 ## Message Queues
 
