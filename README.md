@@ -37,6 +37,7 @@
 - [Local Cloud Emulators](#local-cloud-emulators)
 - [Blockchain & Web3](#blockchain--web3)
 - [IoT & Home Automation](#iot--home-automation)
+- [Media, Streaming & WebRTC](#media-streaming--webrtc)
 - [Useful Commands](#useful-commands)
 
 ## Development Tools
@@ -1145,6 +1146,57 @@ sudo rabbitmqctl set_permissions -p / admin ".*" ".*" ".*"
 | AdGuard Home | 53 (DNS) | 3000 (setup), 80 (web) | http://localhost:3000 | [adguard.com/adguard-home](https://adguard.com/adguard-home) | DNS Ad Blocker |
 | Homebridge | 8581 | 8582 | http://localhost:8581 | [homebridge.io](https://homebridge.io) | HomeKit Bridge |
 | Matter | 5540/UDP | - | - | [buildwithmatter.com](https://buildwithmatter.com) | Smart Home Standard |
+
+## Media, Streaming & WebRTC
+
+### Media Servers
+
+| Tool | Default Port | Alternative Ports | Web UI | Website | Purpose |
+|------|-------------|------------------|--------|---------|--------|
+| Plex | 32400 | 1900 (DLNA), 3005 (companion), 32410-32414/UDP | http://localhost:32400/web | [plex.tv](https://plex.tv) | Media Server |
+| Jellyfin | 8096 | 8920 (HTTPS), 7359 (discovery), 1900 (DLNA) | http://localhost:8096 | [jellyfin.org](https://jellyfin.org) | Media Server |
+| Emby | 8096 | 8920 (HTTPS), 1900 (DLNA) | http://localhost:8096 | [emby.media](https://emby.media) | Media Server |
+| Kodi | 8080 | 9090 (JSON-RPC), 9777 (events) | - | [kodi.tv](https://kodi.tv) | Media Center |
+| Navidrome | 4533 | 4534 | http://localhost:4533 | [navidrome.org](https://navidrome.org) | Music Server |
+| Audiobookshelf | 13378 | 13379 | http://localhost:13378 | [audiobookshelf.org](https://audiobookshelf.org) | Audiobook Server |
+| Owncast | 8080 | 1935 (RTMP) | http://localhost:8080 | [owncast.online](https://owncast.online) | Live Streaming |
+| PeerTube | 9000 | 1935 (RTMP) | http://localhost:9000 | [joinpeertube.org](https://joinpeertube.org) | Video Platform |
+
+### Media Automation
+
+| Tool | Default Port | Alternative Ports | Web UI | Website | Purpose |
+|------|-------------|------------------|--------|---------|--------|
+| Sonarr | 8989 | 8990 | http://localhost:8989 | [sonarr.tv](https://sonarr.tv) | TV Management |
+| Radarr | 7878 | 7879 | http://localhost:7878 | [radarr.video](https://radarr.video) | Movie Management |
+| Lidarr | 8686 | 8687 | http://localhost:8686 | [lidarr.audio](https://lidarr.audio) | Music Management |
+| Readarr | 8787 | 8788 | http://localhost:8787 | [readarr.com](https://readarr.com) | Book Management |
+| Prowlarr | 9696 | 9697 | http://localhost:9696 | [prowlarr.com](https://prowlarr.com) | Indexer Manager |
+| Bazarr | 6767 | 6768 | http://localhost:6767 | [bazarr.app](https://bazarr.app) | Subtitles |
+| Overseerr | 5055 | 5056 | http://localhost:5055 | [overseerr.io](https://overseerr.io) | Request Management |
+| Jellyseerr | 5055 | 5056 | http://localhost:5055 | [github.com/Fallenbagel/jellyseerr](https://github.com/Fallenbagel/jellyseerr) | Request Management |
+| qBittorrent | 8080 | 6881 (torrent) | http://localhost:8080 | [qbittorrent.org](https://qbittorrent.org) | Torrent Client |
+| Transmission | 9091 | 51413 (torrent) | http://localhost:9091 | [transmissionbt.com](https://transmissionbt.com) | Torrent Client |
+| SABnzbd | 8080 | 8081 | http://localhost:8080 | [sabnzbd.org](https://sabnzbd.org) | Usenet Client |
+| Deluge | 8112 | 58846 (daemon) | http://localhost:8112 | [deluge-torrent.org](https://deluge-torrent.org) | Torrent Client |
+| NZBGet | 6789 | 6790 | http://localhost:6789 | [nzbget.com](https://nzbget.com) | Usenet Client |
+
+### Streaming Protocols & Media Servers
+
+| Protocol / Tool | Default Port | Alternative Ports | Protocol | Website | Purpose |
+|-----------------|-------------|------------------|----------|---------|--------|
+| RTSP | 554 | - | RTSP | - | IP Cameras |
+| RTMP | 1935 | - | RTMP | - | Live Streaming |
+| HLS / DASH | 80 | 443 | HTTP | - | Adaptive Streaming |
+| SRT | 9000 | - | SRT | [srtalliance.org](https://srtalliance.org) | Low-Latency Video |
+| MediaMTX | 8554 (RTSP) | 1935 (RTMP), 8888 (HLS), 8889 (WebRTC), 9997 (API) | Multi | [github.com/bluenviron/mediamtx](https://github.com/bluenviron/mediamtx) | Media Router |
+| nginx-rtmp | 1935 | 8080 (stats) | RTMP | [github.com/arut/nginx-rtmp-module](https://github.com/arut/nginx-rtmp-module) | RTMP Server |
+| OvenMediaEngine | 1935 | 3333 (LLHLS), 8080 (API) | Multi | [ovenmedialabs.com](https://ovenmedialabs.com) | Streaming Server |
+| Ant Media Server | 5080 | 5443 (HTTPS), 1935 (RTMP) | Multi | [antmedia.io](https://antmedia.io) | Streaming Server |
+| Wowza Streaming Engine | 1935 | 8086/8087 (REST/UI) | Multi | [wowza.com](https://wowza.com) | Streaming Server |
+| Icecast | 8000 | 8443 (HTTPS) | HTTP/Icecast | [icecast.org](https://icecast.org) | Audio Streaming |
+| VLC | 8080 | 4212 (telnet) | HTTP | [videolan.org](https://videolan.org) | Media Player |
+| Kurento | 8888 | - | WebRTC | [kurento.org](https://kurento.org) | WebRTC Media Server |
+| ONVIF | 80 | 3702 (WS-Discovery) | SOAP | [onvif.org](https://onvif.org) | Camera Standard |
 
 ## Best Practices
 
