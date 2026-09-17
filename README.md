@@ -803,6 +803,32 @@ sudo rabbitmqctl set_permissions -p / admin ".*" ".*" ".*"
 | Loki | 3100 | 3101 | http://localhost:3100 | [grafana.com/oss/loki](https://grafana.com/oss/loki) | Log Aggregation |
 | Promtail | - | - | - | [grafana.com/oss/loki](https://grafana.com/oss/loki) | Log Shipper |
 | Vector | 8686 | 8687 | http://localhost:8686 | [vector.dev](https://vector.dev) | Log Router |
+| SigNoz | 3301 | 4317/4318 (OTLP) | http://localhost:3301 | [signoz.io](https://signoz.io) | Observability Platform |
+| Grafana Alloy | 12345 | 4317/4318 (OTLP) | http://localhost:12345 | [grafana.com/docs/alloy](https://grafana.com/docs/alloy) | Telemetry Collector |
+| VictoriaLogs | 9428 | 9429 | http://localhost:9428 | [victoriametrics.com](https://victoriametrics.com) | Log Database |
+| OpenSearch | 9200 | 5601 (dashboards) | http://localhost:9200 | [opensearch.org](https://opensearch.org) | Log Search |
+| Seq | 5341 | 45341 (HTTPS) | http://localhost:5341 | [datalust.co/seq](https://datalust.co/seq) | Structured Logs |
+| GoAccess | 7890 | 7891 | http://localhost:7890 | [goaccess.io](https://goaccess.io) | Real-Time Log Analyzer |
+| Datadog Agent | 8125 (DogStatsD) | 8126 (APM) | - | [docs.datadoghq.com](https://docs.datadoghq.com) | Agent & APM |
+| Elastic APM Server | 8200 | 8201 | - | [elastic.co/apm](https://elastic.co/apm) | APM Server |
+
+### Syslog & Log Transport Ports
+
+| Service | Port | Protocol | Purpose |
+|---------|------|----------|--------|
+| Syslog (UDP) | 514 | UDP | Classic syslog |
+| Syslog (TCP) | 514 | TCP | Reliable syslog |
+| Syslog (TLS) | 6514 | TCP/TLS | Secure syslog |
+| RELP (rsyslog) | 20514 | TCP | Reliable event logging |
+| Elastic Beats | 5044 | TCP | Filebeat/Logstash |
+| Fluentd Forward | 24224 | TCP/UDP | Fluentd/Fluent Bit |
+| GELF (Graylog) | 12201 | UDP/TCP | Graylog Extended Log Format |
+| Graylog Syslog Input | 1514 | TCP/UDP | Graylog syslog |
+| OTLP gRPC | 4317 | gRPC | OpenTelemetry |
+| OTLP HTTP | 4318 | HTTP | OpenTelemetry |
+| Splunk HEC | 8088 | HTTP | HTTP Event Collector |
+| Splunk Indexer | 9997 | TCP | Indexer receiving |
+| Splunk Management | 8089 | HTTPS | Splunkd management |
 
 ## System Ports
 
