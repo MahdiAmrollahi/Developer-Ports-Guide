@@ -17,6 +17,7 @@
 - [Monitoring](#monitoring)
 - [Message Queues](#message-queues)
 - [RabbitMQ Details](#rabbitmq---complete-details)
+- [Streaming, CDC & Data Integration](#streaming-cdc--data-integration)
 - [Testing Tools](#testing-tools)
 - [Security Tools](#security-tools)
 - [CI/CD](#cicd)
@@ -456,6 +457,27 @@
 | Amazon SQS | - | - | - | [aws.amazon.com/sqs](https://aws.amazon.com/sqs) | Cloud Queue |
 | Google Pub/Sub | - | - | - | [cloud.google.com/pubsub](https://cloud.google.com/pubsub) | Cloud Messaging |
 | Azure Service Bus | - | - | - | [azure.microsoft.com/service-bus](https://azure.microsoft.com/service-bus) | Cloud Messaging |
+| Redpanda | 8082 (Pandaproxy) | 9092 (Kafka API), 9644 (admin), 8081 (schema) | [redpanda.com](https://redpanda.com) | Kafka-Compatible Streaming |
+| RabbitMQ Stream | 5552 | 5553 | [rabbitmq.com](https://rabbitmq.com) | Stream Protocol |
+| Kafka KRaft Controller | 9093 | 9094 | [kafka.apache.org](https://kafka.apache.org) | KRaft Controller |
+| Kafka Connect | 8083 | 8084 | [kafka.apache.org](https://kafka.apache.org) | Data Integration |
+| Kafka REST Proxy | 8082 | 8083 | [docs.confluent.io](https://docs.confluent.io/platform/current/kafka-rest) | REST Gateway |
+| Confluent Schema Registry | 8081 | 8082 | [docs.confluent.io](https://docs.confluent.io/platform/current/schema-registry) | Schema Management |
+| ksqlDB | 8088 | 8089 | [ksqldb.io](https://ksqldb.io) | Streaming SQL |
+| Kafka UI (Provectus) | 8080 | 8081 | [github.com/provectus/kafka-ui](https://github.com/provectus/kafka-ui) | Kafka Web UI |
+| AKHQ | 8080 | 8081 | [akhq.io](https://akhq.io) | Kafka Web UI |
+| Kafdrop | 9000 | 9001 | [github.com/obsidiandynamics/kafdrop](https://github.com/obsidiandynamics/kafdrop) | Kafka Web UI |
+| Redpanda Console | 8080 | 8081 | [redpanda.com](https://redpanda.com) | Kafka Web UI |
+| Pulsar Manager | 9527 | 9528 | [pulsar.apache.org](https://pulsar.apache.org) | Pulsar Web UI |
+| Apache BookKeeper | 3181 | 3182 | [bookkeeper.apache.org](https://bookkeeper.apache.org) | Pulsar Storage |
+| NATS Cluster Route | 6222 | - | [nats.io](https://nats.io) | Cluster Communication |
+| MQTT over TLS | 8883 | 8884 | [mqtt.org](https://mqtt.org) | Secure MQTT |
+| MQTT over WebSocket | 8083 | 8084 (TLS) | [mqtt.org](https://mqtt.org) | MQTT for Browsers |
+| IBM MQ | 1414 | 9443 (console) | [ibm.com/products/mq](https://ibm.com/products/mq) | Enterprise Messaging |
+| TIBCO EMS | 7222 | 7223 | [tibco.com](https://tibco.com) | Enterprise Messaging |
+| Solace PubSub+ | 55555 | 8080 (SEMP), 1943 (TLS) | [solace.com](https://solace.com) | Event Broker |
+| Beanstalkd | 11300 | 11301 | [beanstalkd.github.io](https://beanstalkd.github.io) | Work Queue |
+| NSQ | 4150 | 4151 (admin), 4160/4161 (HTTP) | [nsq.io](https://nsq.io) | Distributed Queue |
 
 ## RabbitMQ - Complete Details
 
@@ -488,6 +510,28 @@ sudo rabbitmqctl add_user admin password
 sudo rabbitmqctl set_user_tags admin administrator
 sudo rabbitmqctl set_permissions -p / admin ".*" ".*" ".*"
 ```
+
+## Streaming, CDC & Data Integration
+
+| Tool | Default Port | Alternative Ports | Web UI | Website | Purpose |
+|------|-------------|------------------|--------|---------|--------|
+| Debezium | 8083 (via Kafka Connect) | 8084 | - | [debezium.io](https://debezium.io) | Change Data Capture |
+| Confluent Schema Registry | 8081 | 8082 | - | [docs.confluent.io](https://docs.confluent.io/platform/current/schema-registry) | Schema Management |
+| Karapace | 8081 | 8082 | - | [github.com/Aiven-Open/karapace](https://github.com/Aiven-Open/karapace) | Schema Registry |
+| ksqlDB | 8088 | 8089 | - | [ksqldb.io](https://ksqldb.io) | Streaming SQL |
+| Kafka REST Proxy | 8082 | 8083 | - | [docs.confluent.io](https://docs.confluent.io/platform/current/kafka-rest) | REST Gateway |
+| Kafka UI (Provectus) | 8080 | 8081 | http://localhost:8080 | [github.com/provectus/kafka-ui](https://github.com/provectus/kafka-ui) | Kafka UI |
+| AKHQ | 8080 | 8081 | http://localhost:8080 | [akhq.io](https://akhq.io) | Kafka UI |
+| Kafdrop | 9000 | 9001 | http://localhost:9000 | [github.com/obsidiandynamics/kafdrop](https://github.com/obsidiandynamics/kafdrop) | Kafka UI |
+| Redpanda Console | 8080 | 8081 | http://localhost:8080 | [redpanda.com](https://redpanda.com) | Kafka UI |
+| Pulsar Manager | 9527 | 9528 | http://localhost:9527 | [pulsar.apache.org](https://pulsar.apache.org) | Pulsar UI |
+| Apache BookKeeper | 3181 | 3182 | - | [bookkeeper.apache.org](https://bookkeeper.apache.org) | Pulsar Storage |
+| Airbyte | 8000 | 8001 (API) | http://localhost:8000 | [airbyte.com](https://airbyte.com) | ELT Platform |
+| dbt Docs | 8080 | 8081 | http://localhost:8080 | [getdbt.com](https://getdbt.com) | Transformation Docs |
+| Meltano | 5000 | 5001 | http://localhost:5000 | [meltano.com](https://meltano.com) | ELT |
+| Apache SeaTunnel | 5801 | - | http://localhost:5801 | [seatunnel.apache.org](https://seatunnel.apache.org) | Data Integration |
+| Maxwell | - | - | - | [maxwells-daemon.io](https://maxwells-daemon.io) | MySQL CDC |
+| Redpanda Connect (Benthos) | 4195 | 4196 | - | [redpanda.com/connect](https://redpanda.com/connect) | Stream Processing |
 
 ## Testing Tools
 
