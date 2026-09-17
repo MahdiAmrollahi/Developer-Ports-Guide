@@ -301,7 +301,7 @@
 | Tool | Main Port | Secure Port | Registry Port | Website | Purpose |
 |------|-----------|------------|---------------|---------|--------|
 | Docker Engine | 2375 | 2376 | 5000 | [docker.com](https://docker.com) | Container Engine |
-| Docker Compose | متغیر | متغیر | - | [docs.docker.com/compose](https://docs.docker.com/compose) | Multi-container |
+| Docker Compose | Dynamic | Dynamic (host-assigned) | - | [docs.docker.com/compose](https://docs.docker.com/compose) | Multi-container |
 | Docker Swarm | 2377 | 2378 | - | [docs.docker.com/swarm](https://docs.docker.com/swarm) | Orchestration |
 | Portainer | 9000 | 9443 | - | [portainer.io](https://portainer.io) | Docker Management |
 | Kubernetes | 6443 | 6444 | - | [kubernetes.io](https://kubernetes.io) | Container Orchestration |
@@ -312,6 +312,65 @@
 | Lens | 3000 | 3001 | - | [k8slens.dev](https://k8slens.dev) | Kubernetes IDE |
 | Octant | 7777 | 7778 | - | [octant.dev](https://octant.dev) | Kubernetes Dashboard |
 | K9s | - | - | - | [k9scli.io](https://k9scli.io) | Kubernetes CLI |
+| Podman | - | 2375 (REST API) | - | [podman.io](https://podman.io) | Daemonless Containers |
+| containerd | - | - | - | [containerd.io](https://containerd.io) | Container Runtime |
+| BuildKit | - | - | - | [github.com/moby/buildkit](https://github.com/moby/buildkit) | Build Engine |
+
+### Kubernetes Component Ports
+
+| Component | Port | Protocol | Purpose |
+|-----------|------|----------|--------|
+| kube-apiserver | 6443 | HTTPS | Kubernetes API |
+| etcd (client) | 2379 | HTTP/gRPC | Cluster key-value store |
+| etcd (peer) | 2380 | HTTPS | etcd cluster communication |
+| kubelet API | 10250 | HTTPS | Node agent API |
+| kubelet (read-only) | 10255 | HTTP | Deprecated metrics endpoint |
+| kube-scheduler | 10259 | HTTPS | Scheduler metrics/health |
+| kube-controller-manager | 10257 | HTTPS | Controller metrics/health |
+| kube-proxy | 10256 | HTTP | Health & metrics |
+| NodePort Services | 30000-32767 | TCP/UDP | External service access |
+| CoreDNS | 53 | UDP/TCP | Cluster DNS |
+| CoreDNS metrics | 9153 | HTTP | DNS metrics |
+| metrics-server | 4443 | HTTPS | Cluster metrics |
+| Kubernetes Dashboard | 8443 | HTTPS | Web UI |
+| kubectl proxy | 8001 | HTTP | Local API proxy |
+
+### Kubernetes CNI & Networking Ports
+
+| Component | Port | Protocol | Purpose |
+|-----------|------|----------|--------|
+| Calico | 179 | BGP | Route exchange |
+| Calico VXLAN | 4789 | UDP | Overlay network |
+| Flannel VXLAN | 8472 | UDP | Overlay network |
+| Cilium health | 4240 | TCP | Health checks |
+| Cilium Hubble | 4244 | TCP | Hubble observability |
+| Cilium | 4245, 4250, 4251 | TCP | Cluster communication |
+| Weave Net | 6783 | TCP/UDP | Control & data |
+| Weave Net fast path | 6784 | UDP | Fast data path |
+| MetalLB memberlist | 7946 | TCP/UDP | Speaker discovery |
+| WireGuard overlay | 51820 | UDP | Encrypted overlay |
+| NGINX Ingress Controller | 80, 443 | TCP | Traffic entry |
+| NGINX Ingress metrics | 10254 | HTTP | Metrics & health |
+| HAProxy Ingress | 80, 443 | TCP | Traffic entry |
+| Contour / Envoy | 80, 443 | TCP | Traffic entry |
+| Contour Envoy admin | 9001 | HTTP | Envoy admin |
+
+### Container Registries, Artifacts & Git Services
+
+| Tool | Default Port | Alternative Ports | Web UI | Website | Purpose |
+|------|-------------|------------------|--------|---------|--------|
+| Docker Registry | 5000 | 5001 | - | [distribution.github.io](https://distribution.github.io/distribution) | Private Registry |
+| Harbor | 80 | 443, 8080 (core) | https://localhost | [goharbor.io](https://goharbor.io) | Registry + UI |
+| Nexus Repository | 8081 | 8082/8083 (Docker) | http://localhost:8081 | [sonatype.com](https://sonatype.com) | Artifact Repository |
+| JFrog Artifactory | 8081 | 8082 (Docker) | http://localhost:8081 | [jfrog.com](https://jfrog.com) | Artifact Repository |
+| Verdaccio | 4873 | 4874 | http://localhost:4873 | [verdaccio.org](https://verdaccio.org) | Private npm Registry |
+| devpi | 3141 | 3142 | http://localhost:3141 | [devpi.net](https://devpi.net) | Private PyPI |
+| Gitea | 3000 | 2222 (SSH, Docker), 22 (SSH) | http://localhost:3000 | [gitea.com](https://gitea.com) | Git Service |
+| Forgejo | 3000 | 2222 (SSH, Docker) | http://localhost:3000 | [forgejo.org](https://forgejo.org) | Git Service |
+| Gogs | 3000 | 22 (SSH) | http://localhost:3000 | [gogs.io](https://gogs.io) | Git Service |
+| GitLab | 80 | 443, 22 (SSH), 5050 (registry) | http://localhost | [gitlab.com](https://gitlab.com) | Git Platform |
+| Gerrit | 8080 | 29418 (SSH) | http://localhost:8080 | [gerritcodereview.com](https://gerritcodereview.com) | Code Review |
+| Bitbucket Server | 7990 | 7999 (SSH) | http://localhost:7990 | [atlassian.com/bitbucket](https://atlassian.com/bitbucket) | Git Platform |
 
 ## Monitoring
 
