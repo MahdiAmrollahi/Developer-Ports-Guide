@@ -7,6 +7,7 @@
 
 ## 📖 Table of Contents
 - [Development Tools](#development-tools)
+- [Debugging & Dev Server Ports](#debugging--dev-server-ports)
 - [Databases](#databases)
 - [Web Servers](#web-servers)
 - [Docker & Kubernetes](#docker--kubernetes)
@@ -89,6 +90,31 @@
 | Jekyll | 4000 | 4001 | `bundle exec jekyll serve` | [jekyllrb.com](https://jekyllrb.com) | Static Site Generator |
 | Medusa | 9000 | 9001 | `npm run dev` | [medusajs.com](https://medusajs.com) | E-commerce Platform |
 | Saleor | 8000 | 8001 | `python manage.py runserver` | [saleor.io](https://saleor.io) | E-commerce Platform |
+
+## Debugging & Dev Server Ports
+
+| Tool / Runtime | Debug Port | Protocol | How to Start | Website | Purpose |
+|----------------|-----------|----------|--------------|---------|--------|
+| Node.js Inspector | 9229 | Chrome DevTools | `node --inspect app.js` | [nodejs.org](https://nodejs.org/en/docs/guides/debugging-getting-started) | JS Debugging |
+| Deno Inspector | 9229 | Chrome DevTools | `deno run --inspect main.ts` | [deno.com](https://deno.com) | JS/TS Debugging |
+| Bun Inspector | 6499 | WebSocket | `bun --inspect index.ts` | [bun.sh](https://bun.sh/docs/runtime/debugger) | JS/TS Debugging |
+| Chrome DevTools Protocol | 9222 | HTTP/WS | `chrome --remote-debugging-port=9222` | [chromedevtools.github.io](https://chromedevtools.github.io/devtools-protocol) | Browser Automation |
+| Python debugpy | 5678 | DAP/TCP | `python -m debugpy --listen 5678 app.py` | [github.com/microsoft/debugpy](https://github.com/microsoft/debugpy) | Python Debugging |
+| PHP Xdebug | 9003 | DBGp | `xdebug.client_port=9003` | [xdebug.org](https://xdebug.org) | PHP Debugging |
+| Java JDWP | 5005 | JDWP | `java -agentlib:jdwp=transport=dt_socket,server=y,address=5005` | [docs.oracle.com](https://docs.oracle.com) | JVM Debugging |
+| Go Delve | 40000 | DAP/TCP | `dlv debug --headless --listen=:40000` | [github.com/go-delve/delve](https://github.com/go-delve/delve) | Go Debugging |
+| Ruby rdbg | 12345 | DAP/TCP | `rdbg --open app.rb` | [github.com/ruby/debug](https://github.com/ruby/debug) | Ruby Debugging |
+| JMX / RMI | 1099 | JMX | `-Dcom.sun.management.jmxremote.port=1099` | [docs.oracle.com](https://docs.oracle.com) | JVM Monitoring |
+| Vite HMR | 24678 | WebSocket | automatic with `vite` | [vitejs.dev](https://vitejs.dev) | Hot Module Reload |
+| React Native Metro | 8081 | HTTP/WS | `npx react-native start` | [metrobundler.dev](https://metrobundler.dev) | RN Bundler & Debugger |
+| Expo Dev Server | 8081 | HTTP/WS | `npx expo start` | [expo.dev](https://expo.dev) | Expo Bundler |
+| Expo Web | 19006 | HTTP | `npx expo start --web` | [expo.dev](https://expo.dev) | Expo Web Preview |
+| Flutter DevTools | 9100 | HTTP | `dart devtools` | [devtools.flutter.dev](https://devtools.flutter.dev) | Flutter Debugging |
+| Playwright Report | 9323 | HTTP | `npx playwright show-report` | [playwright.dev](https://playwright.dev) | Test Report Viewer |
+| GDB Server | 1234 | GDB | `gdbserver :1234 ./app` | [sourceware.org/gdb](https://sourceware.org/gdb) | Native Debugging |
+| OpenOCD | 3333 / 4444 | GDB / Telnet | `openocd` | [openocd.org](https://openocd.org) | Embedded Debugging |
+| Android ADB | 5037 | ADB | `adb start-server` | [developer.android.com](https://developer.android.com/tools/adb) | Android Debug Bridge |
+| Android Wireless ADB | 5555 | ADB | `adb tcpip 5555` | [developer.android.com](https://developer.android.com/tools/adb) | Wireless Debugging |
 
 ## Databases
 
