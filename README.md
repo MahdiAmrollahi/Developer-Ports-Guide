@@ -26,6 +26,7 @@
 - [Identity & Access Management](#identity--access-management)
 - [Data Processing & Workflow Tools](#data-processing--workflow-tools)
 - [Apache Tools](#apache-tools)
+- [Big Data & Hadoop Ecosystem](#big-data--hadoop-ecosystem)
 - [Log Management](#log-management)
 - [System Ports](#system-ports)
 - [Useful Commands](#useful-commands)
@@ -708,6 +709,85 @@ sudo rabbitmqctl set_permissions -p / admin ".*" ".*" ".*"
 | Apache Knox | 8443 | 8444 | https://localhost:8443 | [knox.apache.org](https://knox.apache.org) | Security Gateway |
 | Apache Ambari | 8080 | 8081 | http://localhost:8080 | [ambari.apache.org](https://ambari.apache.org) | Cluster Management |
 | Apache Hue | 8888 | 8889 | http://localhost:8888 | [gethue.com](https://gethue.com) | Data Analytics Workbench |
+
+## Big Data & Hadoop Ecosystem
+
+### HDFS & YARN
+
+| Component | Default Port | Alternative Ports | Purpose |
+|-----------|-------------|------------------|--------|
+| NameNode RPC | 8020 | 9000 (legacy) | HDFS RPC |
+| NameNode Web UI | 9870 | 50070 (Hadoop 2) | HDFS UI |
+| DataNode Data Transfer | 9864 | 50075 (Hadoop 2) | Block transfer |
+| DataNode IPC | 9867 | 50010 | Internal IPC |
+| Secondary NameNode | 9868 | 50090 | Checkpointing |
+| JournalNode | 8485 | 8480 | HA edit logs |
+| YARN ResourceManager | 8088 | 8032 (scheduler), 8030 (tracker) | Resource UI |
+| YARN NodeManager | 8042 | 8041 (IPC) | Node UI |
+| YARN Timeline Server | 8188 | 10200 | Application history |
+| MapReduce JobHistory | 19888 | 10020 | Job history |
+| MapReduce Shuffle | 13562 | - | Shuffle handler |
+
+### Hive, HBase & Warehouse
+
+| Component | Default Port | Alternative Ports | Purpose |
+|-----------|-------------|------------------|--------|
+| Hive Metastore | 9083 | 9084 | Metadata service |
+| HiveServer2 | 10000 | 10002 (HTTP) | SQL endpoint |
+| Hive WebHCat | 50111 | - | REST API |
+| HBase Master | 16000 | 16010 (web) | HBase master |
+| HBase RegionServer | 16020 | 16030 (web) | Region server |
+| HBase REST | 8080 | 8085 | REST API |
+| HBase Thrift | 9090 | 9095 | Thrift API |
+| Apache Phoenix | 8765 | - | SQL on HBase |
+| Apache Impala | 21050 | 21000 (web), 25000/25010 (HS2) | MPP SQL |
+| Apache Kudu | 7050 | 7051 (web), 8050/8051 (tablet) | Columnar storage |
+| Apache Accumulo | 9999 | 9997, 50095 (monitor) | Key-value store |
+| Apache Kylin | 7070 | 7071 | OLAP cube |
+| Apache Falcon | 15000 | 15443 (TLS) | Data governance |
+| Apache Sentry | 8038 | - | Authorization (legacy) |
+
+### Spark, Flink & Stream Processing
+
+| Component | Default Port | Alternative Ports | Purpose |
+|-----------|-------------|------------------|--------|
+| Spark Master | 7077 | 8080 (web UI) | Cluster manager |
+| Spark Worker | 8081 | 8082 | Worker UI |
+| Spark Application UI | 4040 | 4041+ (multiple apps) | Job UI |
+| Spark History Server | 18080 | - | Job history |
+| Spark Thrift Server | 10000 | 10001 | SQL endpoint |
+| Spark REST API | 6066 | - | Job submission |
+| Flink JobManager | 8081 | 6123 (RPC), 6124 (blob) | Web UI |
+| Flink TaskManager | 6121 | 6122, 6125 (query) | Data plane |
+| Flink History Server | 8082 | 8083 | Job history |
+| Storm Nimbus | 6627 | 8080 (UI) | Cluster master |
+| Storm Supervisor | 6700 | 6701, 6702, 6703 | Worker slots |
+| Storm DRPC | 3772 | 3773 | RPC |
+| Trino / Presto | 8080 | 8443 (TLS) | Distributed SQL |
+| Apache Drill | 8047 | 8048 | SQL on Hadoop |
+
+### ClickHouse & OLAP Details
+
+| Service | Port | Protocol | Purpose |
+|---------|------|----------|--------|
+| ClickHouse HTTP | 8123 | HTTP | Query interface |
+| ClickHouse Native | 9000 | TCP | Native protocol |
+| ClickHouse MySQL | 9004 | MySQL | MySQL compatibility |
+| ClickHouse PostgreSQL | 9005 | PostgreSQL | PostgreSQL compatibility |
+| ClickHouse Interserver | 9009 | TCP | Replication |
+| ClickHouse Keeper | 9181 | TCP | Coordination |
+
+### Managed Big Data Platforms
+
+| Platform | Website | Notes |
+|----------|---------|-------|
+| AWS EMR | [aws.amazon.com/emr](https://aws.amazon.com/emr) | Cloud Hadoop/Spark |
+| Databricks | [databricks.com](https://databricks.com) | Managed Spark |
+| Azure HDInsight | [azure.microsoft.com/hdinsight](https://azure.microsoft.com/services/hdinsight) | Cloud Hadoop |
+| Google Dataproc | [cloud.google.com/dataproc](https://cloud.google.com/dataproc) | Managed Spark/Hadoop |
+| Snowflake | [snowflake.com](https://snowflake.com) | Cloud Data Warehouse |
+| BigQuery | [cloud.google.com/bigquery](https://cloud.google.com/bigquery) | Serverless Analytics |
+| Redshift | [aws.amazon.com/redshift](https://aws.amazon.com/redshift) | Cloud Data Warehouse |
 
 ## Log Management
 
