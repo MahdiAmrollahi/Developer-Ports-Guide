@@ -1359,24 +1359,52 @@ sudo rabbitmqctl set_permissions -p / admin ".*" ".*" ".*"
 - 🔒 Always close unnecessary ports
 - 🔐 Use secure ports (HTTPS/SSL)
 - 🛡️ Configure firewall for open ports
+- 🔑 Never expose databases (3306, 5432, 27017, 6379) directly to the internet
+- 🧱 Bind internal services to `127.0.0.1` instead of `0.0.0.0`
+- ⏱️ Use fail2ban or CrowdSec to block brute-force attempts
+- 🧪 Scan your own host with `nmap -sV` before attackers do
+- 📜 Prefer 443/8443 with valid TLS certificates over plain HTTP
+- 👤 Change default credentials (admin/admin) immediately after setup
+- 🧾 Audit open ports regularly with `ss -tulpn` or `Get-NetTCPConnection`
 
 ### Development
 - 🎯 Use standard ports
 - 🔄 Have alternative ports for different environments
 - 📝 Keep port documentation updated
+- 🧩 Load ports from environment variables (`PORT=3001`) with sensible defaults
+- 🌐 Check for conflicts before starting (Vite 5173, React 3000, etc.)
+- 🐳 Prefer Docker port mapping (`-p host:container`) over changing app config
+- 🚫 Avoid ports below 1024 in development (privileged ports)
+- ☁️ macOS: avoid 5000/7000 (AirPlay); Windows: watch Hyper-V reserved ranges
+- 🔁 One service per port - never run two apps on the same port
+- 🧪 In tests, use port 0 to let the OS pick a free port automatically
 
 ## Troubleshooting Guide
 
 ### "Port already in use" Error
 ```bash
-# Find process using port
-lsof -i :3000
-sudo netstat -tulpn | grep :3000
-ss -tulpn | grep :3000
+# Find the process using the port
+lsof -i :3000                    # Linux/macOS
+sudo netstat -tulpn | grep :3000 # Linux
+ss -tulpn | grep :3000           # Linux (modern)
+netstat -ano | findstr :3000     # Windows
+Get-NetTCPConnection -LocalPort 3000 # Windows PowerShell
 
-# Free up port
-kill -9 $(lsof -t -i:3000)
-sudo fuser -k 3000/tcp
+# Free up the port
+kill -9 $(lsof -t -i:3000)       # Linux/macOS
+sudo fuser -k 3000/tcp           # Linux
+taskkill /PID <PID> /F           # Windows
+Stop-Process -Id <PID> -Force    # Windows PowerShell
+```
+
+### Identify the Process Name
+```bash
+# Windows
+Get-Process -Id (Get-NetTCPConnection -LocalPort 3000).OwningProcess
+
+# Linux/macOS
+lsof -i :3000
+ps -p $(lsof -t -i:3000) -o comm=
 ```
 
 ### Change Port in Docker
@@ -1387,6 +1415,57 @@ services:
     ports:
       - "3001:3000"  # host:container
 ```
+```bash
+docker run -p 3001:3000 my-app
+docker ps --format "table {{.Names}}\t{{.Ports}}"
+docker compose port app 3000
+```
+
+### Windows: Ports Reserved by Hyper-V / WSL
+```powershell
+netsh int ipv4 show excludedportrange protocol=tcp
+netsh int ipv4 add excludedportrange protocol=tcp startport=3000 numberofports=1
+```
+
+### macOS: AirPlay Receiver Uses Ports 5000 and 7000
+```text
+System Settings -> General -> AirDrop & Handoff -> turn off "AirPlay Receiver"
+# or run your app elsewhere: flask run --port 5002
+```
+
+### Port Exhaustion / TIME_WAIT
+```bash
+ss -tan state time-wait | wc -l   # Linux
+netstat -an | findstr TIME_WAIT   # Windows
+
+# Ephemeral port range
+sysctl net.ipv4.ip_local_port_range    # Linux
+netsh int ipv4 show dynamicport tcp    # Windows
+```
+
+### Check if a Remote Port Is Open
+```bash
+nc -zv host 443                     # Linux/macOS
+Test-NetConnection host -Port 443   # Windows PowerShell
+curl -v telnet://host:443
+telnet host 443
+```
+
+### SSH Tunneling & kubectl port-forward
+```bash
+# Local forward: remote PostgreSQL reachable on local 5433
+ssh -L 5433:localhost:5432 user@server
+
+# Remote forward: expose local 3000 on the server
+ssh -R 8080:localhost:3000 user@server
+
+# SOCKS proxy on port 1080
+ssh -D 1080 user@server
+
+# Kubernetes port forwarding
+kubectl port-forward svc/my-service 8080:80
+kubectl port-forward pod/my-pod 5433:5432 -n default
+```
 
 ## Useful Commands
 
@@ -1394,19 +1473,30 @@ services:
 ```bash
 # Windows
 netstat -an | findstr :3000
+netstat -ano | findstr :3000
+Get-NetTCPConnection -LocalPort 3000
+Get-NetUDPEndpoint -LocalPort 3000
 
-# Linux/Mac
+# Linux
 netstat -an | grep :3000
+ss -tulpn | grep :3000
 lsof -i :3000
+
+# macOS
+lsof -i :3000
+netstat -an | grep :3000
 ```
 
 ### Free Up Port
 ```bash
 # Windows
 taskkill /PID <PID> /F
+Stop-Process -Id <PID> -Force
 
-# Linux/Mac
+# Linux/macOS
 kill -9 <PID>
+kill -9 $(lsof -t -i:3000)
+sudo fuser -k 3000/tcp
 ```
 
 ### Change Port in Projects
@@ -1417,9 +1507,82 @@ PORT=3001 npm start
 # Next.js
 npm run dev -- -p 3001
 
+# Vite
+npm run dev -- --port 3001
+
+# Angular
+ng serve --port 4201
+
+# Vue CLI
+npm run serve -- --port 3001
+
 # Express
-process.env.PORT = 3001
+app.listen(3001)          # or process.env.PORT
+
+# Django
+python manage.py runserver 8001
+
+# Flask
+flask run --port 5001
+
+# FastAPI
+uvicorn main:app --port 8001
+
+# Laravel
+php artisan serve --port=8001
+
+# Spring Boot
+mvn spring-boot:run -Dspring-boot.run.arguments=--server.port=8081
+
+# .NET
+dotnet run --urls "http://localhost:5001"
+
+# Ruby on Rails
+rails server -p 3001
 ```
+
+### Firewall Quick Reference
+```bash
+# Linux (ufw)
+sudo ufw allow 8080/tcp
+sudo ufw delete allow 8080/tcp
+sudo ufw status numbered
+
+# Linux (firewalld)
+sudo firewall-cmd --add-port=8080/tcp --permanent
+sudo firewall-cmd --reload
+
+# Linux (iptables)
+sudo iptables -A INPUT -p tcp --dport 8080 -j ACCEPT
+
+# Windows (PowerShell as Administrator)
+New-NetFirewallRule -DisplayName "Allow 8080" -Direction Inbound -Protocol TCP -LocalPort 8080 -Action Allow
+
+# Windows (netsh)
+netsh advfirewall firewall add rule name="Allow 8080" dir=in action=allow protocol=TCP localport=8080
+```
+
+### Scan Ports
+```bash
+nmap -p 1-65535 localhost
+nmap -sV -p 80,443,3000 192.168.1.10
+nc -zv 192.168.1.10 1-1000
+Test-NetConnection 192.168.1.10 -Port 443
+```
+
+### Port Allocation Cheat Sheet for New Projects
+
+| Range | Suggested Use |
+|-------|---------------|
+| 3000-3999 | Frontend & Node.js apps |
+| 4000-4999 | APIs, chat & analytics tools |
+| 5000-5999 | Python & ML services |
+| 6000-6999 | Dev tooling (Storybook, TensorBoard) |
+| 7000-7999 | Admin panels & management UIs |
+| 8000-8999 | Backends & reverse proxies |
+| 9000-9999 | Platforms & shared services |
+| 10000-19999 | Internal APIs & data services |
+| 27000+ | Databases on custom ports |
 
 ## Contributing
 
