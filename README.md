@@ -33,6 +33,7 @@
 - [Email & Notification Services](#email--notification-services)
 - [Collaboration & Communication](#collaboration--communication)
 - [Analytics, BI & Feature Flags](#analytics-bi--feature-flags)
+- [Error Tracking & APM](#error-tracking--apm)
 - [Useful Commands](#useful-commands)
 
 ## Development Tools
@@ -1055,6 +1056,21 @@ sudo rabbitmqctl set_permissions -p / admin ".*" ".*" ".*"
 | Flipt | 8080 | 9000 (gRPC) | http://localhost:8080 | [flipt.io](https://flipt.io) | Feature Flags |
 | GrowthBook | 3000 | 3100 (API) | http://localhost:3000 | [growthbook.io](https://growthbook.io) | A/B Testing |
 | LaunchDarkly / Optimizely / Split | - | - | cloud | - | Cloud Feature Flags |
+
+## Error Tracking & APM
+
+| Tool | Default Port | Alternative Ports | Web UI | Website | Purpose |
+|------|-------------|------------------|--------|---------|--------|
+| Sentry (self-hosted) | 9000 | 9001 | http://localhost:9000 | [sentry.io](https://sentry.io) | Error Tracking |
+| GlitchTip | 8000 | 8001 | http://localhost:8000 | [glitchtip.com](https://glitchtip.com) | Error Tracking |
+| Apache SkyWalking OAP | 11800 (gRPC) | 12800 (HTTP) | http://localhost:8080 | [skywalking.apache.org](https://skywalking.apache.org) | APM |
+| SkyWalking UI | 8080 | 8081 | http://localhost:8080 | [skywalking.apache.org](https://skywalking.apache.org) | APM UI |
+| Pinpoint Web | 8080 | 8081 | http://localhost:8080 | [pinpoint-apm.io](https://pinpoint-apm.io) | APM |
+| Pinpoint Collector | 9991 | 9992 (stats), 9993 (span) | - | [pinpoint-apm.io](https://pinpoint-apm.io) | APM Collector |
+| Elastic APM Server | 8200 | 8201 (TLS) | - | [elastic.co/apm](https://elastic.co/apm) | APM |
+| Datadog Agent | 8125 (DogStatsD) | 8126 (APM) | - | [docs.datadoghq.com](https://docs.datadoghq.com) | Agent & APM |
+| Bugsnag / Rollbar / Honeybadger | - | - | cloud | [bugsnag.com](https://bugsnag.com) | Cloud Error Tracking |
+| New Relic / Dynatrace / Elastic | - | - | cloud | [newrelic.com](https://newrelic.com) | Cloud APM |
 
 ## Best Practices
 
