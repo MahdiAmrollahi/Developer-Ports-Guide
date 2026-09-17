@@ -15,6 +15,7 @@
 - [API Gateways & Service Mesh](#api-gateways--service-mesh)
 - [Docker & Kubernetes](#docker--kubernetes)
 - [Monitoring](#monitoring)
+- [Search Engines](#search-engines)
 - [Message Queues](#message-queues)
 - [RabbitMQ Details](#rabbitmq---complete-details)
 - [Streaming, CDC & Data Integration](#streaming-cdc--data-integration)
@@ -434,6 +435,26 @@
 | snmp_exporter | 9116 | SNMP devices | [github.com/prometheus/snmp_exporter](https://github.com/prometheus/snmp_exporter) |
 | process-exporter | 9256 | Linux processes | [github.com/ncabatoff/process-exporter](https://github.com/ncabatoff/process-exporter) |
 | json_exporter | 7979 | JSON endpoints | [github.com/prometheus-community/json_exporter](https://github.com/prometheus-community/json_exporter) |
+
+## Search Engines
+
+| Tool | Default Port | Alternative Ports | Web UI | Website | Purpose |
+|------|-------------|------------------|--------|---------|--------|
+| Elasticsearch | 9200 | 9201 (HTTP), 9300/9301 (transport) | http://localhost:9200 | [elastic.co](https://elastic.co) | Search & Analytics |
+| OpenSearch | 9200 | 9300 (transport) | http://localhost:9200 | [opensearch.org](https://opensearch.org) | Search & Analytics |
+| OpenSearch Dashboards | 5601 | 5602 | http://localhost:5601 | [opensearch.org](https://opensearch.org) | Dashboards |
+| Kibana | 5601 | 5602 | http://localhost:5601 | [elastic.co/kibana](https://elastic.co/kibana) | Dashboards |
+| Meilisearch | 7700 | 7701 | http://localhost:7700 | [meilisearch.com](https://meilisearch.com) | Instant Search |
+| Typesense | 8108 | 8109 | http://localhost:8108 | [typesense.org](https://typesense.org) | Typo-Tolerant Search |
+| Apache Solr | 8983 | 8984 | http://localhost:8983 | [solr.apache.org](https://solr.apache.org) | Enterprise Search |
+| Sphinx | 9312 | 9306 (MySQL), 9308 (HTTP) | - | [sphinxsearch.com](https://sphinxsearch.com) | Full-Text Search |
+| Manticore Search | 9306 | 9312 (binary), 9308 (HTTP) | http://localhost:9308 | [manticoresearch.com](https://manticoresearch.com) | Full-Text Search |
+| Quickwit | 7280 | 7281 (gRPC) | http://localhost:7280 | [quickwit.io](https://quickwit.io) | Log Search Engine |
+| ZincSearch | 4080 | 4081 | http://localhost:4080 | [zincsearch.com](https://zincsearch.com) | Lightweight Search |
+| Typesense Dashboard | 8108 | - | http://localhost:8108 | [typesense.org](https://typesense.org) | Typesense UI |
+| Algolia | - | - | cloud | [algolia.com](https://algolia.com) | Search API |
+| Vespa | 8080 | 19071 | http://localhost:8080 | [vespa.ai](https://vespa.ai) | Search & Vector |
+| Sonic | 1491 | - | - | [github.com/valeriansaliou/sonic](https://github.com/valeriansaliou/sonic) | Lightweight Search |
 
 ## Message Queues
 
